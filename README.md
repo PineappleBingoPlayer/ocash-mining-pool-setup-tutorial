@@ -6,7 +6,6 @@
   <a href="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial">
     <img src="images/10420-removebg.png" alt="Logo" width="200" height="200">
   </a>
-  [![twitter][twitter-shield]][twitter-url]
   <h3 align="center">oCash Mining Pool Setup Tutorials</h3>
 
   <p align="center">
@@ -24,6 +23,10 @@
 </div>
 
 <a name="readme-top"></a>
+
+
+
+
 ## oCash Mining Pool Setup Tutorials
 
 This tutorials for setting up an oCash Mining Pool over AWS LightSail VPS instance
