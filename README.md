@@ -1,8 +1,33 @@
+[![github][github-lastcommit-shield]][repo-url]
+[![twitter][twitter-shield]][twitter-url]
+
+<!-- PROJECT LOGO -->
+<div align="center">
+  <a href="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial">
+    <img src="images/10420-removebg.png" alt="Logo" width="200" height="200">
+  </a>
+  [![twitter][twitter-shield]][twitter-url]
+  <h3 align="center">oCash Mining Pool Setup Tutorials</h3>
+
+  <p align="center">
+    project_description
+    <br />
+    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    |
+    <a href="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/ssues">Report Bug</a>
+    |
+    <a href="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/issues">Leave Comments</a>
+  </p>
+</div>
+
 <a name="readme-top"></a>
 ## oCash Mining Pool Setup Tutorials
 
 This tutorials for setting up an oCash Mining Pool over AWS LightSail VPS instance
-If you intend to set the minign pool on your local device, please 
+If you intend to set the mining pool VPS on your local device, please follow <a href="https://medium.com/@uanid/how-to-install-the-ocash-pool-169dd21c32a2" target="_blank">this</a> tutorial provided by JSY <a href="https://medium.com/@uanid/how-to-install-the-ocash-pool-169dd21c32a2" target="_blank">(@yunjuseong3)</a>
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -32,16 +57,6 @@ If you intend to set the minign pool on your local device, please
 
 
 
-### Built With
-
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -154,7 +169,11 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+[github-lastcommit-shield]:https://img.shields.io/github/last-commit/pineapplebingoplayer/ocash-mining-pool-setup-tutorial
+[twitter-shield]:https://img.shields.io/twitter/follow/PineappleBingo_?label=Follow&style=social
 
+[repo-url]:https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial
+[twitter-url]:https://twitter.com/PineappleBingo_
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
