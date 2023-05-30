@@ -6,10 +6,10 @@
   <a href="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial">
     <img src="images/10420-removebg.png" alt="Logo" width="200" height="200">
   </a>
-  <h3 align="center">oCash Mining Pool Setup Tutorials</h3>
+  <h2 align="center">oCash Mining Pool Setup Tutorials</h2>
 
   <p align="center">
-    project_description
+    oCash is a crypto currency that empower oLand metaverse by @overlinenetwork.
     <br />
     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
     <br />
@@ -27,11 +27,14 @@
 
 
 
-## oCash Mining Pool Setup Tutorials
+## Before We Start
 
-This tutorials for setting up an oCash Mining Pool over AWS LightSail VPS instance
+This tutorial is for setting up a `cloud based oCash Mining Pool` over AWS LightSail VPS instance.
 If you intend to set the mining pool VPS on your local device, please follow <a href="https://medium.com/@uanid/how-to-install-the-ocash-pool-169dd21c32a2" target="_blank">this</a> tutorial provided by JSY <a href="https://medium.com/@uanid/how-to-install-the-ocash-pool-169dd21c32a2" target="_blank">(@yunjuseong3)</a>
+> This tutorial will explain steps as simple as possible for those of whom are new to the mining world including myself. Please report any bugs, or comments along with instruction steps. Your valued feedbacks will help #oland Community. 
 
+
+## Table of Contents
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -58,12 +61,16 @@ If you intend to set the mining pool VPS on your local device, please follow <a 
   </ol>
 </details>
 
+## Built with
+
+This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+
+* [![lightsail][lightsail-shield]][lightsail-url]
 
 
+<a href="https://www.google.com/search?q=vps+provider+list&sxsrf=APwXEde1H7TPezGQCqAOomKFr6natjwx0w%3A1685476325270&source=hp&ei=5VN2ZM_bDLTg0PEP0tqzmAo&iflsig=AOEireoAAAAAZHZh9b0zuxO7LNaFgpSCOnqRyCT8pGRg&ved=0ahUKEwiP4pDN6J3_AhU0MDQIHVLtDKMQ4dUDCAs&uact=5&oq=vps+provider+list&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgYIABAWEB4yCAgAEIoFEIYDMggIABCKBRCGAzIICAAQigUQhgMyCAgAEIoFEIYDOgQIIxAnOhMILhCKBRCxAxCDARDHARDRAxBDOgcIABCKBRBDOg0ILhCKBRDHARDRAxBDOhEILhCABBCxAxCDARDHARDRAzoUCC4QgAQQsQMQgwEQxwEQ0QMQ1AI6DgguEIMBENQCELEDEIoFOggIABCKBRCRAjoICAAQgAQQsQM6CwguEIAEELEDEIMBOgsILhCDARCxAxCABDoLCAAQgAQQsQMQgwE6CwguEIAEELEDENQCOgUILhCABDoQCC4QigUQsQMQxwEQ0QMQQzoLCAAQigUQsQMQgwE6BwgjEOoCECc6DQguEIoFEMcBEK8BECc6BwgjEIoFECc6CwguEIMBELEDEIoFOgsILhCABBDHARDRAzoKCAAQigUQsQMQQzoNCAAQigUQsQMQgwEQQzoRCC4QgAQQsQMQgwEQxwEQrwE6BAgAEAM6CwguEIoFELEDEIMBOgsILhCABBDHARCvAToICAAQFhAeEA9QAFi3OGDXOWgJcAB4AYABygSIAe8VkgEIMjAuNS41LTGYAQCgAQGwAQo&sclient=gws-wiz" target="_blank"> Google "VPS Provider List"</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -174,9 +181,12 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 
 [github-lastcommit-shield]:https://img.shields.io/github/last-commit/pineapplebingoplayer/ocash-mining-pool-setup-tutorial
 [twitter-shield]:https://img.shields.io/twitter/follow/PineappleBingo_?label=Follow&style=social
+[lightsail-shield]:https://img.shields.io/badge/AWS-LightSail%20--%20Linux%20O%2FS%20Debian10-yellow
 
 [repo-url]:https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial
 [twitter-url]:https://twitter.com/PineappleBingo_
+[lightsail-url]:https://aws.amazon.com/lightsail
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
