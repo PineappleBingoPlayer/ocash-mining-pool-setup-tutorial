@@ -91,7 +91,7 @@ Through this tutorial, we are going to set up VPS(Virtual Private Server) on Ama
 In order to clone the git repository, we need a GitHub ID & Password. If you don't have one yet, please sign up <a href="https://github.com/" target="_blank">here</a>.
 <br/>
 ### AWS IAM Set up ![recommended-shield]
-Before we are setting up VPS instance, Please create AWS account(`root` user) Sign up AWS account <a href="" target="_blank">here</a> if you don't have one. Then we are going to set up IAM user instead of using `root` account.
+Before we are setting up VPS instance,  Sign up AWS account(`root` user) <a href="" target="_blank">here</a> if you don't have one yet. Then we are going to set up IAM user instead of using `root` account.
 
 1. Login in as `Root User` with your Email address
 2. Search IAM in the search bar and click `users' on the left sidebar.
@@ -106,7 +106,7 @@ Before we are setting up VPS instance, Please create AWS account(`root` user) Si
 src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/73449a82-748f-4021-85b3-f0729551aad6" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/cf6c9853-7381-462d-bb1d-6a1ec558ee29" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/7747371b-5f07-484e-8af4-c3018a93e308" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/bc8df107-02de-4dd1-a096-f85cd88fafbf" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/06e2efea-f076-4a88-abf7-e35385ae4378" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/712c7062-5425-4f3c-ab68-d3f03b31262e" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/72080b6e-4b35-4051-99f2-241c121d0306" width="11%"></img> 
 
 ### AWS LightSail Set Up ![required-shield]
-This step we are going to setup VPS instance. One you login to <a href="" target="_blank">AWS Console </a> you can simply type `LightSail' on the searchbar or Find link <a href="" target="_blank">here</a>
+This step we are going to setup VPS instance. One you login to <a href="" target="_blank">AWS Console </a> you can simply type `LightSail' on the searchbar or Find the link <a href="" target="_blank">here</a>
 1. Create Instance
    - Select Instance Location
    - Select a Platform(Linux vs Windows)
