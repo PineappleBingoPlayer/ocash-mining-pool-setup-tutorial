@@ -6,7 +6,7 @@
   <a href="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial">
     <img src="images/10420-removebg.png" alt="Logo" width="200" height="200">
   </a>
-  
+  <h5>oFriends#10420</h5>
   <h2 align="center">oCash Mining Pool Setup Tutorials</h2>
 
   <p align="center">
@@ -88,17 +88,42 @@ Feel free to skip over any of following setps if you already completed.
 In order to clone the git repository, we need a GitHub ID & Password. If you don't have one yet, please sign up <a href="https://github.com/" target="_blank">here</a>.
 <br/>
 ### AWS IAM Set up
+Before we are setting up VPS instance, Please create AWS account(`root` user) Sign up AWS account <a href="" target="_blank">here</a> if you don't have one. Then we are going to set up IAM user instead of using `root` account.
+1. Login in as `Root User` with your Email address
+2. Search IAM in the search bar and click `users' on the left sidebar.
+3. Follow steps to create `IAM user` and Logout and Login back using `IAM user` that we just created.
+
 ### AWS LightSail Set Up
+This step we are going to setup VPS instance. One you login to <a href="" target="_blank">AWS Console </a> you can simply type `LightSail' on the searchbar or Find link <a href="" target="_blank">here</a>
+1. Create Instance
+* Select Instance Location
+* Select a Platform(Linux vs Windows)
+* Select a bluprint
+> For this tutorial, we will host a static website for the demonstrate purpose, so we select `Linux OS Debian v10.8` only; However, feel free to choose whichever OS you are confortable with and a blueprints for applications listed below. 
+2. Attach Static IP
+3. Open Ports
+
 ### Purchase & Connect Domain
+In order to provide easy accesss for miners to your mining pool, purchasing your own domain is recomened.
+1. Purchase your domain name
+> There are many domain registration service providers. Pick any of providers here and create your own unique, eye-catching, and easy-to-remmeber domain name. ex)<a href="https://ocash.network" target="_blank">`ocash.network`</a>
+> For this tutorial, we use <a href="https://domains.google/" target="_blank">Google Domains</a>
+* Login your Google account
+* Search domain name that you wish for
+* Select alternates if it's already exit
+* Make purchase
+
+3. Connect to your LightSail Instance
+* open `oCach-pool-debian` instance
+* ...
+### MobaXterm
+
 
 ## Installation
 ### Utility Packages
 ### Git
 ### Go Ethereum
 ### Docker
-
-## Other Softwares
-### MobaXterm
 
 ## TLS Configurations
 ### Testing
