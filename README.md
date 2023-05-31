@@ -68,7 +68,7 @@ If you intend to set the mining pool VPS on your local device, please follow <a 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * [![lightsail][lightsail-shield]][lightsail-url]
-
+* ...
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -80,18 +80,37 @@ Through this tutorial, we are going to set up VPS(Virtual Private Server) on Ama
 <br/>
 > Feel free to explore other VPS providers, and choose whichever provider is suitable for your budget, UI, or your own preference. There are 100's of providers available. Check <a href="https://www.google.com/search?q=vps+provider+list&sxsrf=APwXEde1H7TPezGQCqAOomKFr6natjwx0w%3A1685476325270&source=hp&ei=5VN2ZM_bDLTg0PEP0tqzmAo&iflsig=AOEireoAAAAAZHZh9b0zuxO7LNaFgpSCOnqRyCT8pGRg&ved=0ahUKEwiP4pDN6J3_AhU0MDQIHVLtDKMQ4dUDCAs&uact=5&oq=vps+provider+list&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgYIABAWEB4yCAgAEIoFEIYDMggIABCKBRCGAzIICAAQigUQhgMyCAgAEIoFEIYDOgQIIxAnOhMILhCKBRCxAxCDARDHARDRAxBDOgcIABCKBRBDOg0ILhCKBRDHARDRAxBDOhEILhCABBCxAxCDARDHARDRAzoUCC4QgAQQsQMQgwEQxwEQ0QMQ1AI6DgguEIMBENQCELEDEIoFOggIABCKBRCRAjoICAAQgAQQsQM6CwguEIAEELEDEIMBOgsILhCDARCxAxCABDoLCAAQgAQQsQMQgwE6CwguEIAEELEDENQCOgUILhCABDoQCC4QigUQsQMQxwEQ0QMQQzoLCAAQigUQsQMQgwE6BwgjEOoCECc6DQguEIoFEMcBEK8BECc6BwgjEIoFECc6CwguEIMBELEDEIoFOgsILhCABBDHARDRAzoKCAAQigUQsQMQQzoNCAAQigUQsQMQgwEQQzoRCC4QgAQQsQMQgwEQxwEQrwE6BAgAEAM6CwguEIoFELEDEIMBOgsILhCABBDHARCvAToICAAQFhAeEA9QAFi3OGDXOWgJcAB4AYABygSIAe8VkgEIMjAuNS41LTGYAQCgAQGwAQo&sclient=gws-wiz" target="_blank">Google's serached "VPS Provider List" results</a>, and many of them provides promotions such as $100-$300 credit, 3 month free trial, etc. I choose AWS LightSail since I'm familiar with other AWS Services, and it has 3 month free tiral promos.  
 
-### Prerequisites
+## Prerequisites
 
-#### AWS IAM Set up
-#### AWS LightSail Set Up
-#### Connect Domain
+Feel free to skip over any of following setps if you already completed. 
 
-### Installation
-#### Utility Package
-#### Git
-#### Go Ethereum
-#### Docker
-#### Other Softwares
+### GitHub Account
+In order to clone the git repository, we need a GitHub ID & Password. If you don't have one yet, please sign up <a href="https://github.com/" target="_blank">here</a>.
+<br/>
+### AWS IAM Set up
+### AWS LightSail Set Up
+### Purchase & Connect Domain
+
+## Installation
+### Utility Packages
+### Git
+### Go Ethereum
+### Docker
+
+## Other Softwares
+### MobaXterm
+
+## TLS Configurations
+### Testing
+### Production
+
+## Run oCash Mining Pool
+
+## Web UI
+### Static Site
+
+
+
 
 This is an example of how to list things you need to use the software and how to install them.
 * npm
