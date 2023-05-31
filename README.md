@@ -264,8 +264,8 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 [required-shield]:https://img.shields.io/badge/required-red
-[recommended-shield]:https://img.shields.io/badge/recommended-red
-[optional-shield]:https://img.shields.io/badge/optional-red
+[recommended-shield]:https://img.shields.io/badge/recommended-green
+[optional-shield]:https://img.shields.io/badge/optional-yellow
 
 [github-fork-shield]:https://img.shields.io/github/forks/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial?style=social
 [github-stars-shield]:https://img.shields.io/github/stars/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial?style=social
