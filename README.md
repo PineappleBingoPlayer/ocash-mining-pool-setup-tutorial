@@ -1,4 +1,7 @@
 [![github][github-lastcommit-shield]][repo-url]
+[![github-followers][github-followers-shield]][repo-url]
+[![github-fork][github-fork-shield]][repo-url]
+[![github-stars][github-stars-shield]][repo-url]
 [![twitter][twitter-shield]][twitter-url]
 
 <!-- PROJECT LOGO -->
@@ -82,18 +85,18 @@ Through this tutorial, we are going to set up VPS(Virtual Private Server) on Ama
 
 ## Prerequisites
 
-Feel free to skip over any of following setps if you already completed. 
+> Feel free to skip over any of following setps if you already completed. 
 
-### GitHub Account
+### GitHub Account ![required-shield]
 In order to clone the git repository, we need a GitHub ID & Password. If you don't have one yet, please sign up <a href="https://github.com/" target="_blank">here</a>.
 <br/>
-### AWS IAM Set up
+### AWS IAM Set up ![recommended-shield]
 Before we are setting up VPS instance, Please create AWS account(`root` user) Sign up AWS account <a href="" target="_blank">here</a> if you don't have one. Then we are going to set up IAM user instead of using `root` account.
 1. Login in as `Root User` with your Email address
 2. Search IAM in the search bar and click `users' on the left sidebar.
 3. Follow steps to create `IAM user` and Logout and Login back using `IAM user` that we just created.
 
-### AWS LightSail Set Up
+### AWS LightSail Set Up ![required-shield]
 This step we are going to setup VPS instance. One you login to <a href="" target="_blank">AWS Console </a> you can simply type `LightSail' on the searchbar or Find link <a href="" target="_blank">here</a>
 1. Create Instance
 * Select Instance Location
@@ -103,7 +106,7 @@ This step we are going to setup VPS instance. One you login to <a href="" target
 2. Attach Static IP
 3. Open Ports
 
-### Purchase & Connect Domain
+### Purchase & Connect Domain ![recommended-shield]
 In order to provide easy accesss for miners to your mining pool, purchasing your own domain is recomened.
 1. Purchase your domain name
 > There are many domain registration service providers. Pick any of providers here and create your own unique, eye-catching, and easy-to-remmeber domain name. ex)<a href="https://ocash.network" target="_blank">`ocash.network`</a>
@@ -116,7 +119,7 @@ In order to provide easy accesss for miners to your mining pool, purchasing your
 3. Connect to your LightSail Instance
 * open `oCach-pool-debian` instance
 * ...
-### MobaXterm
+### MobaXterm ![optional-shield]
 > This is optional session. Feel free to skip over if you have prefer using `AWS CLI` SCP file transfer and connect to the server through LightSail instance dashboard.
 
 #### What is MobaXterm?
@@ -260,7 +263,13 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+[required-shield]:https://img.shields.io/badge/required-red
+[recommended-shield]:https://img.shields.io/badge/recommended-red
+[optional-shield]:https://img.shields.io/badge/optional-red
 
+[github-fork-shield]:https://img.shields.io/github/forks/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial?style=social
+[github-stars-shield]:https://img.shields.io/github/stars/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial?style=social
+[github-followers-shield]:https://img.shields.io/github/followers/PineappleBingoPlayer?style=social
 [github-lastcommit-shield]:https://img.shields.io/github/last-commit/pineapplebingoplayer/ocash-mining-pool-setup-tutorial
 [twitter-shield]:https://img.shields.io/twitter/follow/PineappleBingo_?label=Follow&style=social
 [lightsail-shield]:https://img.shields.io/badge/AWS-LightSail%20--%20Linux%20O%2FS%20Debian10-yellow
