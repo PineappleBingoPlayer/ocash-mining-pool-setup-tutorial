@@ -117,6 +117,33 @@ In order to provide easy accesss for miners to your mining pool, purchasing your
 * open `oCach-pool-debian` instance
 * ...
 ### MobaXterm
+> This is optional session. Feel free to skip over if you have prefer using `AWS CLI` SCP file transfer and connect to the server through LightSail instance dashboard.
+
+#### What is MobaXterm?
+MobaXterm is a software toolbox for a secure connection to remote server / remote computing.<br/>
+- We will be focused on `SSH Connection` and `SFTP`(Secured File Transfer Protocol)
+- `SSH Connection` : Make direct connection to remote server using SSH without opening LightSail Dashboard.
+- `STFP`: Transfer files between AWS LightSail sever and Windows(MAC)
+
+#### Before We make Connections
+1. Download MobaXterm HomEditon v23.1 `Installer Edition` or `Portable Edition` can be found <a href="" targer="_blank">here</a>
+2. Open AWS LightSail instance dashboard and download `SSH Key(.pem)`
+
+> Make sure your server opens `port 22` and place `SSH Key` file in a secure place
+
+#### SSH Connection
+1. Open MobaXterm & Click `Session`
+2. Fill out "Remote host" as your server's `Public IP address`, "Specify username" as your `IAM User`, then Select `Port 22`
+3. Click `SSH` then, Select `Advanced SSH settings`
+5. Check "Use private key", then select `SSH key(.pem)` file.
+6. Click Ok
+
+#### SFTP Connection
+1. Open MobaXterm & Click `Session`
+2. Fill out "Remote host" as your server's `Public IP address`, "Specify username" as your `IAM User`, then Select `Port 22`
+3. Click `SFTP` then, Select `Advanced Sftp settings`
+4. Check "Use private key", then select `SSH key(.pem)` file.
+6. Click Ok
 
 
 ## Installation
