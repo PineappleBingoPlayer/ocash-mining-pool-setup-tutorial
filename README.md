@@ -99,9 +99,9 @@ Before we are setting up VPS instance, Please create AWS account(`root` user) Si
 ### AWS LightSail Set Up ![required-shield]
 This step we are going to setup VPS instance. One you login to <a href="" target="_blank">AWS Console </a> you can simply type `LightSail' on the searchbar or Find link <a href="" target="_blank">here</a>
 1. Create Instance
-* Select Instance Location
-* Select a Platform(Linux vs Windows)
-* Select a bluprint
+   - Select Instance Location
+   - Select a Platform(Linux vs Windows)
+   - Select a bluprint
 > For this tutorial, we will host a static website for the demonstrate purpose, so we select `Linux OS Debian v10.8` only; However, feel free to choose whichever OS you are confortable with and a blueprints for applications listed below. 
 2. Attach Static IP
 3. Open Ports
@@ -111,19 +111,23 @@ In order to provide easy accesss for miners to your mining pool, purchasing your
 1. Purchase your domain name
 > There are many domain registration service providers. Pick any of providers here and create your own unique, eye-catching, and easy-to-remmeber domain name. ex)<a href="https://ocash.network" target="_blank">`ocash.network`</a>
 > For this tutorial, we use <a href="https://domains.google/" target="_blank">Google Domains</a>
-* Login your Google account
-* Search domain name that you wish for
-* Select alternates if it's already exit
-* Make purchase
+  - Login your Google account
+  - Search domain name that you wish for
+  - Select alternates if it's already exit
+  - Make purchase
 
 3. Connect to your LightSail Instance
 * open `oCach-pool-debian` instance
 * ...
+
+<br/>
+
 ### MobaXterm ![optional-shield]
 > This is optional session. Feel free to skip over if you have prefer using `AWS CLI` SCP file transfer and connect to the server through LightSail instance dashboard.
+<br/>
 
 #### What is MobaXterm?
-MobaXterm is a software toolbox for a secure connection to remote server / remote computing.<br/>
+```MobaXterm is a software toolbox for a secure connection to remote server / remote computing.```
 - We will be focused on `SSH Connection` and `SFTP`(Secured File Transfer Protocol)
 - `SSH Connection` : Make direct connection to remote server using SSH without opening LightSail Dashboard.
 - `STFP`: Transfer files between AWS LightSail sever and Windows(MAC)
