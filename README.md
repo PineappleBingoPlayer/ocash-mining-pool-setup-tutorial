@@ -191,7 +191,7 @@ In order to provide easy accesss for miners to your mining pool, purchasing your
 ### Go Ethereum
 ### Docker
 #### Step1
-Remove old version of `docker`, `docker.io`, and `docker-engine` that if you installed previously. Other than that, move on to the next step.
+Remove old version of `docker`, `docker.io`, and `docker-engine` that may already installed previously.
 ```
 sudo apt-get purge docker lxc-docker docker-engine docker.io
 ```
@@ -228,8 +228,12 @@ Verify the installation by checking version of the Docker
 ```
 docker -v
 ```
+or with a Hello World Image
+```
+docker run hello-world
+```
 
-> If system `Permission denied` error arises during the any part of steps, run the following command, and continue the rest of the steps
+> If system arises `Permission denied` error during the steps, run the following command then continue the rest of the steps.
 
 ```
 sudo usermod -a -G docker $USER
