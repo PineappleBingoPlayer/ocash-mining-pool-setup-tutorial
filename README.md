@@ -88,7 +88,10 @@ Throughout this tutorial, we are going to set up Linux VPS(Virtual Private Serve
 > Feel free to skip over any of following setps if you already completed. 
 
 ### GitHub Account ![required-shield]
+Step1. Create Account
 In order to clone the git repository, we need a GitHub ID & Password. If you don't have one yet, please sign up <a href="https://github.com/" target="_blank">here</a>.
+
+Step2. Create `Personal Access Token`
 1. Login Github
 2. Click on Github account icon -> `Settings` -> `Developer Settings`
 3. Click `Personal Access Token(PST)` -> Tokens(Classic)
