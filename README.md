@@ -89,6 +89,14 @@ Throughout this tutorial, we are going to set up Linux VPS(Virtual Private Serve
 
 ### GitHub Account ![required-shield]
 In order to clone the git repository, we need a GitHub ID & Password. If you don't have one yet, please sign up <a href="https://github.com/" target="_blank">here</a>.
+1. Login Github
+2. Click on Github account icon -> `Settings` -> `Developer Settings`
+3. Click `Personal Access Token(PST)` -> Tokens(Classic)
+4. Select Expiration Day and Select Scopes
+
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/8705ac56-bfad-41e7-ae98-98f15f765de5" width="15%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/fcf3bd17-c0e6-40bc-a317-967bdd03b3c1" width="15%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/dada5ad1-a9e3-44e6-b061-b5f98784beaf" width="15%"></img> 
+
+
 <br/>
 ### AWS IAM Set up ![recommended-shield]
 Before we are setting up VPS instance,  Sign up AWS account(`root` user) <a href="" target="_blank">here</a> if you don't have one yet. Then we are going to set up IAM user instead of using `root` account.
