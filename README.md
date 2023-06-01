@@ -81,7 +81,6 @@ If you intend to set the mining pool VPS on your local device, please follow <a 
 
 Throughout this tutorial, we are going to set up Linux VPS(Virtual Private Server) on `Amazon LightSail`, and walk through how we make secure connection to the server through `SSH` & transfer files using `SFTP` as well as basic `Linux commands` to be able to setup your oCash Mining Pool successfully. Also, for the demonstration purposes, we will host a `static website` and connect `custom domains`. 
 
-<br/>
 > Feel free to explore other VPS providers, and choose whichever provider is suitable for your budget, UI, or your own preference. There are 100's of providers available. Check <a href="https://www.google.com/search?q=vps+provider+list&sxsrf=APwXEde1H7TPezGQCqAOomKFr6natjwx0w%3A1685476325270&source=hp&ei=5VN2ZM_bDLTg0PEP0tqzmAo&iflsig=AOEireoAAAAAZHZh9b0zuxO7LNaFgpSCOnqRyCT8pGRg&ved=0ahUKEwiP4pDN6J3_AhU0MDQIHVLtDKMQ4dUDCAs&uact=5&oq=vps+provider+list&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgYIABAWEB4yCAgAEIoFEIYDMggIABCKBRCGAzIICAAQigUQhgMyCAgAEIoFEIYDOgQIIxAnOhMILhCKBRCxAxCDARDHARDRAxBDOgcIABCKBRBDOg0ILhCKBRDHARDRAxBDOhEILhCABBCxAxCDARDHARDRAzoUCC4QgAQQsQMQgwEQxwEQ0QMQ1AI6DgguEIMBENQCELEDEIoFOggIABCKBRCRAjoICAAQgAQQsQM6CwguEIAEELEDEIMBOgsILhCDARCxAxCABDoLCAAQgAQQsQMQgwE6CwguEIAEELEDENQCOgUILhCABDoQCC4QigUQsQMQxwEQ0QMQQzoLCAAQigUQsQMQgwE6BwgjEOoCECc6DQguEIoFEMcBEK8BECc6BwgjEIoFECc6CwguEIMBELEDEIoFOgsILhCABBDHARDRAzoKCAAQigUQsQMQQzoNCAAQigUQsQMQgwEQQzoRCC4QgAQQsQMQgwEQxwEQrwE6BAgAEAM6CwguEIoFELEDEIMBOgsILhCABBDHARCvAToICAAQFhAeEA9QAFi3OGDXOWgJcAB4AYABygSIAe8VkgEIMjAuNS41LTGYAQCgAQGwAQo&sclient=gws-wiz" target="_blank">Google's serached "VPS Provider List" results</a>, and many of them provides promotions such as $100-$300 credit, 3 month free trial, etc. I choose AWS LightSail since I'm familiar with other AWS Services, and it has 3 month free tiral promos.  
 
 ## Prerequisites
@@ -123,7 +122,8 @@ This step we are going to setup VPS instance. One you login to <a href="" target
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/329df9da-04f3-4d84-bbf0-ca1ac5c89997" width="11%"></img>
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/f5dec8be-a60e-4d03-9b6f-e428cc180a2e" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/13dd2fec-9ea7-4d68-827f-c77e4d450594" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/994b5601-1b5e-4db4-adba-53365fbb4e2b" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/7fe74ab7-d06e-43d7-80a5-943a0127602b" width="11%"></img> 
-<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/72ac728a-cf5e-4a13-a21f-aa538a140521" width="11%"></img> 
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/72ac728a-cf5e-4a13-a21f-aa538a140521" width="11%"></img>
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/4bbfa80b-41a8-4558-abe2-ce3839bb18cc" width="11%"></img> 
 
 
 ### Purchase & Connect Domain ![recommended-shield]
@@ -191,9 +191,9 @@ sudo apt-get install certbot
 ```
 Generate Key
 ```
-certbot certonly --manual --preferred-challenges dns --email <your email> --domains <your domain>
+sudo certbot certonly --manual --preferred-challenges dns --email <your email> --domains <your domain>
 ```
-> ex) certbot certonly --manual --preferred-challenges dns --email pineapple@gmail.com --domains ocash.network
+> ex) sudo certbot certonly --manual --preferred-challenges dns --email pineapple@gmail.com --domains ocash.network
 
 Follow instruction to add DNS TEXT Record to your domain prodivder, (Googld Domains in our case) with given `Host Name` as `_acme-challenge.<YOUR_DOMAIN>` and data as given string. Then press `Enter` to continue.
 
