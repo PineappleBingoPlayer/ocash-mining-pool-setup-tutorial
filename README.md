@@ -139,6 +139,7 @@ In order to provide easy accesss for miners to your mining pool, purchasing your
 * open `oCach-pool-debian` instance
 * ...
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br/>
 
 ### MobaXterm ![optional-shield]
@@ -171,6 +172,7 @@ In order to provide easy accesss for miners to your mining pool, purchasing your
 4. Check "Use private key", then select `SSH key(.pem)` file.
 6. Click Ok
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Installation
 ### Utility Packages
@@ -212,31 +214,7 @@ the PKCS12 key is in file `pool-cert.pfx` located at `/home/<username>`
 ### Static Site
 
 
-
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- USAGE EXAMPLES -->
 ## Usage
