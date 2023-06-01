@@ -142,16 +142,17 @@ In order to provide easy accesss for miners to your mining pool, purchasing your
 1. Purchase your domain name
 > There are many domain registration service providers. Pick any of providers here and create your own unique, eye-catching, and easy-to-remmeber domain name. ex)<a href="https://ocash.network" target="_blank">`ocash.network`</a>
 > For this tutorial, we use <a href="https://domains.google/" target="_blank">Google Domains</a>
-   - Login your Google account
-   - Search domain name that you wish for
-   - Select alternates if it's already exit
-   - Make a purchase
+      - Login your Google account
+      - Search domain name that you wish for
+      - Select alternates if it's already exit
+      - Make a purchase
 
 2. Connect your domain
    - Open <a href="https://domains.google/" target="_blank">Google Domains</a>
    - Select your domain name
    - Click `DNS` then, `Manage Custom Record` 
-   - Add custome record, `Host name` as "empty" `Type` as "A" then, `Data` as  `your VPS Public IP address`
+   - Add custom record, `Host name` as "empty" `Type` as "A" then, `Data` as  `your VPS Public IP address`
+   - Add custom record, `Host name` as "WWW" `Type` as "A" then, `Data` as  `your VPS Public IP address`
 
   > When its succeessfully updated custom record, it will take 1-3 mins to reflect changes.
   
@@ -169,7 +170,7 @@ In order to provide easy accesss for miners to your mining pool, purchasing your
 <br/>
 
 #### What is MobaXterm?
-```MobaXterm is a software toolbox for a secure connection to remote server / remote computing.```
+MobaXterm is a software toolbox for a secure connection to remote server / remote computing.
 - We will be focused on `SSH Connection` and `SFTP`(Secured File Transfer Protocol)
 - `SSH Connection` : Make direct connection to remote server using SSH without opening LightSail Dashboard.
 - `STFP`: Transfer files between AWS LightSail sever and Windows(MAC)
