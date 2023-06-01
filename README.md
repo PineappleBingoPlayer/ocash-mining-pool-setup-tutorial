@@ -140,12 +140,13 @@ In order to provide easy accesss for miners to your mining pool, purchasing your
    - Open <a href="https://domains.google/" target="_blank">Google Domains</a>
    - Select your domain name
    - Click `DNS` then, `Manage Custom Record` 
-   - Add custome record, `Host name` as "empty" `Type` as "A" then, `Data` as <your VPS Public IP address>
+   - Add custome record, `Host name` as "empty" `Type` as "A" then, `Data` as  `your VPS Public IP address`
 
   > When its succeessfully updated custom record, it will take 1-3 mins to reflect changes.
   > FYI, once you type your domain in the web browser, page won't be displayed since we haven't set up `web server` yet.
   
-<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/bdbed861-f7f7-4bbc-a65d-7d7619b168da" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/5129c17b-285e-44f7-a537-5b49ce91f32f" width="11%"></img> 
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/5129c17b-285e-44f7-a537-5b49ce91f32f" width="11%"></img> 
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/bdbed861-f7f7-4bbc-a65d-7d7619b168da" width="11%"></img> 
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
