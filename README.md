@@ -182,6 +182,30 @@ In order to provide easy accesss for miners to your mining pool, purchasing your
 ### Testing
 ### Production
 
+Install CertBot
+```
+sudo apt-get install certbot
+```
+Generate Key
+```
+certbot certonly --manual --preferred-challenges dns --email <your email> --domains <your domain>
+```
+> ex) certbot certonly --manual --preferred-challenges dns --email pineapple@gmail.com --domains ocash.network
+
+Follow instruction to add DNS TEXT Record to your domain prodivder, (Googld Domains in our case) with given `Host Name` as `_acme-challenge.<YOUR_DOMAIN>` and data as given string. Then press `Enter` to continue.
+
+> Note that we need to select type as `TXT`, and add `_amc-challenge` on `Host Name`. Google Domains will automatically append .<YOUR_DOMAIN> in the end. ex) `_acme-challenge.ocash.network` 
+> If validation keep failed, you need to double check DNS Record. Everytime re-run the command, it will generate new testing key so that you need to update DNS Record.
+
+convert the key to PKCS12 format using
+```
+sudo openssl pkcs12 -export -out pool-cert.pfx -inkey /etc/letsencrypt/live/<your domain>/privkey.pem -in /etc/letsencrypt/live/<your domain>/fullchain.pem
+```
+the PKCS12 key is in file `pool-cert.pfx` located at `/home/<username>`
+
+#### Certbot Hooks
+
+
 ## Run oCash Mining Pool
 
 ## Web UI
