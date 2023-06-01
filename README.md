@@ -188,6 +188,19 @@ In order to provide easy accesss for miners to your mining pool, purchasing your
 ## Installation
 ### Utility Packages
 ### Git
+Update APT package management tools:
+``` 
+sudo apt update
+```
+Download and Install Git:
+```
+sudo apt install git
+```
+Verify the installation:
+```
+git --version
+```
+
 ### Go Ethereum
 ### Docker
 #### Step1
