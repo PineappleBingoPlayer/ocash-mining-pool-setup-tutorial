@@ -216,9 +216,8 @@ sudo openssl pkcs12 -export -out pool-cert.pfx -inkey /etc/letsencrypt/live/<you
 ```
 the PKCS12 key is in file `pool-cert.pfx` located at `/home/<username>`
 
-<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/984d6a68-13b6-4c52-adb5-96ee95f1f86d" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/b9e4b8aa-8683-4e8c-b5f6-fb36c35801f4" width="11%"></img> 
-
-
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/984d6a68-13b6-4c52-adb5-96ee95f1f86d" width="11%"></img>
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c980c52a-127d-4b78-bb2c-d36b00fc9d26" width="11%"></img> 
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/77dced4a-f177-4fb8-a1c4-07cdb5b03633" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c2b3f086-c24a-4f47-be9b-4893250dbab1" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/05d992fe-f4fe-40f0-b9a9-f03cdc995d0b" width="11%"></img> 
 
