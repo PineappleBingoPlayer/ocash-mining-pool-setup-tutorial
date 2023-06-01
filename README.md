@@ -131,19 +131,20 @@ In order to provide easy accesss for miners to your mining pool, purchasing your
 1. Purchase your domain name
 > There are many domain registration service providers. Pick any of providers here and create your own unique, eye-catching, and easy-to-remmeber domain name. ex)<a href="https://ocash.network" target="_blank">`ocash.network`</a>
 > For this tutorial, we use <a href="https://domains.google/" target="_blank">Google Domains</a>
-  - Login your Google account
-  - Search domain name that you wish for
-  - Select alternates if it's already exit
-  - Make a purchase
+   - Login your Google account
+   - Search domain name that you wish for
+   - Select alternates if it's already exit
+   - Make a purchase
 
-3. Connect your domain
+2. Connect your domain
    - Open <a href="https://domains.google/" target="_blank">Google Domains</a>
    - Select your domain name
    - Click `DNS` then, `Manage Custom Record` 
    - Add custome record, `Host name` as "empty" `Type` as "A" then, `Data` as  `your VPS Public IP address`
 
   > When its succeessfully updated custom record, it will take 1-3 mins to reflect changes.
-  > FYI, once you type your domain in the web browser, page won't be displayed since we haven't set up `web server` yet.
+  
+  > FYI, once you type your domain in the web browser, <u>the page won't be displayed since we haven't set up `web server` yet</u>
   
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/5129c17b-285e-44f7-a537-5b49ce91f32f" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/bdbed861-f7f7-4bbc-a65d-7d7619b168da" width="11%"></img> 
