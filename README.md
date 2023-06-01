@@ -190,6 +190,51 @@ In order to provide easy accesss for miners to your mining pool, purchasing your
 ### Git
 ### Go Ethereum
 ### Docker
+#### Step1
+Remove old version of `docker`, `docker.io`, and `docker-engine` that if you installed previously. Other than that, move on to the next step.
+```
+sudo apt-get purge docker lxc-docker docker-engine docker.io
+```
+Update defuault repository:
+```
+sudo apt-get update
+```
+Install required dependencies:
+```
+sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+```
+#### Step2
+Install Docker using the Repository on Debian10
+```
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+```
+Add the docker repository to your system:
+```
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian buster stable"
+```
+Update Repository:
+```
+sudo apt-get update
+```
+Install Docker Engine:
+```
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+```
+Check the status:
+```
+sudo systemctl status docker
+```
+Verify the installation by checking version of the Docker
+```
+docker -v
+```
+
+> If system `Permission denied` error arises during the any part of steps, run the following command, and continue the rest of the steps
+
+```
+sudo usermod -a -G docker $USER
+```
+
 
 ## TLS Configurations
 ### Testing
