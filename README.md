@@ -188,12 +188,18 @@ MobaXterm is a software toolbox for a secure connection to remote server / remot
 5. Check "Use private key", then select `SSH key(.pem)` file.
 6. Click Ok
 
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c9b7100b-f2af-4f41-8a85-cedafa226567" width="11%"></img> 
+
+
 #### SFTP Connection
 1. Open MobaXterm & Click `Session`
 2. Fill out "Remote host" as your server's `Public IP address`, "Specify username" as your `IAM User`, then Select `Port 22`
 3. Click `SFTP` then, Select `Advanced Sftp settings`
 4. Check "Use private key", then select `SSH key(.pem)` file.
 6. Click Ok
+
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/6c10ae09-65eb-401a-8af3-3eb8f1918eb3" width="11%"></img> 
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/93143527-d0e1-48ac-93bc-266c17505042" width="11%"></img> 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
