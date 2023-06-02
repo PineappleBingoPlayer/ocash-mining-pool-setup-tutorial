@@ -14,7 +14,9 @@
 
   <p align="center">
     oCash is a crypto currency that empower oLand metaverse by <a href="https://twitter.com/overlinenetwork">@overlinenetwork</a>
-    
+    <br />
+    <!--     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a> -->
+    <br />
     <br />
     <a href="https://ocash.network" target="_blank">View Demo</a>
     |
@@ -35,7 +37,7 @@ This tutorial is for setting up a `cloud based oCash Mining Pool` over AWS Light
 If you intend to set the mining pool VPS on your local device, please follow <a href="https://medium.com/@uanid/how-to-install-the-ocash-pool-169dd21c32a2" target="_blank">this</a> tutorial provided by JSY <a href="https://medium.com/@uanid/how-to-install-the-ocash-pool-169dd21c32a2" target="_blank">(@yunjuseong3)</a>
 <br/>
 > This tutorial is derivative version of <a href="https://github.com/overliner/ocash-mining-pool" target="_blank">ōCash Mining Pool by @overlinenetwork </a>.
-> This tutorial will explain steps as simple as possible for those of whom are new to the mining world including myself. Please report any bugs, or comments along with instruction steps. Your valued feedbacks will help #oland Community. 
+> We will walk through the steps as simple as possible for those of whom are new to the mining world including myself. Please report any bugs, or comments along with instruction steps. Your valued feedbacks will help #oland Community. 
 
 
 ## Table of Contents
@@ -70,7 +72,7 @@ If you intend to set the mining pool VPS on your local device, please follow <a 
 > For the demonstration purpose, We will host a static website; 
 
 * [![lightsail][lightsail-shield]][lightsail-url]
-* ...
+* [![html][html-shield]][html-url]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -136,7 +138,7 @@ This step we are going to setup VPS instance. One you login to <a href="" target
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/4bbfa80b-41a8-4558-abe2-ce3839bb18cc" width="11%"></img> 
 
 
-### Purchase & Connect Domain ![recommended-shield]
+### Purchase & Connect Domain ![required-shield]
 In order to provide easy accesss for miners to your mining pool, purchasing your own domain is recomened.
 1. Purchase your domain name
 > There are many domain registration service providers. Pick any of providers here and create your own unique, eye-catching, and easy-to-remmeber domain name. ex)<a href="https://ocash.network" target="_blank">`ocash.network`</a>
@@ -175,8 +177,11 @@ MobaXterm is a software toolbox for a secure connection to remote server / remot
 - `STFP`: Transfer files between AWS LightSail sever and Windows(MAC)
 
 #### Before We make Connections
-1. Download MobaXterm HomEditon v23.1 `Installer Edition` or `Portable Edition` can be found <a href="" targer="_blank">here</a>
-2. Open AWS LightSail instance dashboard and download `SSH Key(.pem)`
+1. Download MobaXterm HomEditon v23.1 `Installer Edition` or `Portable Edition` can be found <a href="https://mobaxterm.mobatek.net/download-home-edition.html" targer="_blank">here</a>
+2. Open AWS LightSail instance <a href="https://lightsail.aws.amazon.com/ls/webapp/home/instances" targer="_blank">dashboard</a> and download `SSH Key(.pem)`
+
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/4543a7c5-9415-4142-95ce-3023ae3a21cc" width="11%"></img> 
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/ba49fd6a-bcb1-45a5-b9ad-01fddf4c2b89" width="11%"></img> 
 
 > Make sure your server opens `port 22` and place `SSH Key` file in a secure place
 
@@ -185,8 +190,10 @@ MobaXterm is a software toolbox for a secure connection to remote server / remot
 2. Fill out "Remote host" as your server's `Public IP address`, "Specify username" as your `IAM User`, then Select `Port 22`
 3. Click `SSH` then, Select `Advanced SSH settings`
 5. Check "Use private key", then select `SSH key(.pem)` file.
-6. Click Ok
+6. Click `Ok`
 
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/0fc469b2-4e6f-4fb2-9dad-e260183a25c6" width="11%"></img> 
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/0fc469b2-4e6f-4fb2-9dad-e260183a25c6" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c9b7100b-f2af-4f41-8a85-cedafa226567" width="11%"></img> 
 
 
@@ -195,7 +202,7 @@ MobaXterm is a software toolbox for a secure connection to remote server / remot
 2. Fill out "Remote host" as your server's `Public IP address`, "Specify username" as your `IAM User`, then Select `Port 22`
 3. Click `SFTP` then, Select `Advanced Sftp settings`
 4. Check "Use private key", then select `SSH key(.pem)` file.
-6. Click Ok
+6. Click `Ok`
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/6c10ae09-65eb-401a-8af3-3eb8f1918eb3" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/93143527-d0e1-48ac-93bc-266c17505042" width="11%"></img> 
@@ -412,20 +419,27 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- Label -->
 [required-shield]:https://img.shields.io/badge/required-red
 [recommended-shield]:https://img.shields.io/badge/recommended-green
 [optional-shield]:https://img.shields.io/badge/optional-yellow
 
+<!-- Social-->
 [github-fork-shield]:https://img.shields.io/github/forks/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial?style=social
 [github-stars-shield]:https://img.shields.io/github/stars/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial?style=social
 [github-followers-shield]:https://img.shields.io/github/followers/PineappleBingoPlayer?style=social
 [github-lastcommit-shield]:https://img.shields.io/github/last-commit/pineapplebingoplayer/ocash-mining-pool-setup-tutorial
 [twitter-shield]:https://img.shields.io/twitter/follow/PineappleBingo_?label=Follow&style=social
+
+<!-- Built with -->
 [lightsail-shield]:https://img.shields.io/badge/AWS-LightSail%20--%20Linux%20O%2FS%20Debian10-yellow
+[html-shield]:https://img.shields.io/badge/HTML-orange
 
 [repo-url]:https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial
 [twitter-url]:https://twitter.com/PineappleBingo_
+
 [lightsail-url]:https://aws.amazon.com/lightsail
+[html-url]:https://www.w3schools.com/html/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
