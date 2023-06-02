@@ -103,7 +103,7 @@ Step2. Create `Personal Access Token`:
 
 
 ### AWS IAM Set up ![recommended-shield]
-Before we are setting up VPS instance,  Sign up AWS account(`root` user) <a href="" target="_blank">here</a> if you don't have one yet. Then we are going to set up IAM user instead of using `root` account.
+Before we are setting up VPS instance,  Sign up AWS account(`root user`) <a href="" target="_blank">here</a> if you don't have one yet. Then we are going to set up `IAM user` instead of using `root user`.
 
 1. Login in as `Root User` with your Email address
 2. Search IAM in the search bar and click `users' on the left sidebar.
@@ -112,7 +112,7 @@ Before we are setting up VPS instance,  Sign up AWS account(`root` user) <a href
 5. Give a `User group name`, serach & select "AdministratorAccess". Then create user group
 6. Review and click `Create user`
 7. Return to users list then copy down 12 digits `Account ID`
-8. Logout and Login back using `Account ID` `IAM user` `password` that we just created.
+8. Logout and Login back using `Account ID` `IAM user` `password` that we just created
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/9dfa7c8c-eac7-4c6c-96b2-f11faa9c1bd5" width="11%"></img> <img 
 src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/73449a82-748f-4021-85b3-f0729551aad6" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/cf6c9853-7381-462d-bb1d-6a1ec558ee29" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/7747371b-5f07-484e-8af4-c3018a93e308" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/bc8df107-02de-4dd1-a096-f85cd88fafbf" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/06e2efea-f076-4a88-abf7-e35385ae4378" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/712c7062-5425-4f3c-ab68-d3f03b31262e" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/72080b6e-4b35-4051-99f2-241c121d0306" width="11%"></img> 
@@ -121,7 +121,7 @@ src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/as
 This step we are going to setup VPS instance. One you login to <a href="" target="_blank">AWS Console </a> you can simply type `LightSail' on the searchbar or Find the link <a href="" target="_blank">here</a>
 1. Create Instance
    - Select Instance Location
-   - Select a Platform(Linux vs Windows)
+   - Select a Platform(Linux / Windows)
    - Select a bluprint
 
 > For this tutorial, we will host a static website for the demonstrate purpose, so we select `Linux OS Debian v10.8` only; However, feel free to choose whichever OS you are confortable with and a blueprints for applications listed below. 
