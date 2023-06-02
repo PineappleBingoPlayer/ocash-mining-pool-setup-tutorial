@@ -171,7 +171,7 @@ In order to provide easy accesss for miners to your mining pool, purchasing your
 
 #### What is MobaXterm?
 MobaXterm is a software toolbox for a secure connection to remote server / remote computing.
-- We will be focused on `SSH Connection` and `SFTP`(Secured File Transfer Protocol)
+- We will focus on `SSH Connection` and `SFTP`(Secured File Transfer Protocol)
 - `SSH Connection` : Make direct connection to remote server using SSH without opening LightSail Dashboard.
 - `STFP`: Transfer files between AWS LightSail sever and Windows(MAC)
 
@@ -200,6 +200,8 @@ MobaXterm is a software toolbox for a secure connection to remote server / remot
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/6c10ae09-65eb-401a-8af3-3eb8f1918eb3" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/93143527-d0e1-48ac-93bc-266c17505042" width="11%"></img> 
+
+> After make serue connection, we can easily transfer files between Local computer and Cloud Server by simply drag & drop. Also, we can double click on files from server panel, then It will open up a txt editor to edit and save to the cloud server directly.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
