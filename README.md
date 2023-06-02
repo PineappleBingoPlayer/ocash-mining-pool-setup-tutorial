@@ -1,6 +1,6 @@
 [![github][github-lastcommit-shield]][repo-url]
-[![github-followers][github-followers-shield]][repo-url]
-[![github-fork][github-fork-shield]][repo-url]
+[![github-followers][github-followers-shield]][github-followers-url]
+[![github-fork][github-fork-shield]][github-fork-url]
 [![github-stars][github-stars-shield]][repo-url]
 [![twitter][twitter-shield]][twitter-url]
 
@@ -188,9 +188,9 @@ MobaXterm is a software toolbox for a secure connection to remote server / remot
 
 #### SSH Connection
 1. Open MobaXterm & Click `Session`
-2. Fill out "Remote host" as your server's `Public IP address`, "Specify username" as your `IAM User`, then Select `Port 22`
+2. Fill out `Remote host` as your server's `Public IP address`, `Specify username` as your `IAM User`, then select `Port 22`
 3. Click `SSH` then, Select `Advanced SSH settings`
-5. Check "Use private key", then select `SSH key(.pem)` file.
+5. Check `Use private key`, then select `SSH key(.pem)` file downloaded from AWS Instance Dashboard
 6. Click `Ok`
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/0fc469b2-4e6f-4fb2-9dad-e260183a25c6" width="11%"></img> 
@@ -199,9 +199,9 @@ MobaXterm is a software toolbox for a secure connection to remote server / remot
 
 #### SFTP Connection
 1. Open MobaXterm & Click `Session`
-2. Fill out "Remote host" as your server's `Public IP address`, "Specify username" as your `IAM User`, then Select `Port 22`
+2. Fill out `Remote host` as your server's `Public IP address`, `Specify username` as your `IAM User`, then select `Port 22`
 3. Click `SFTP` then, Select `Advanced Sftp settings`
-4. Check "Use private key", then select `SSH key(.pem)` file.
+4. Check `Use private key`, then select `SSH key(.pem)` file downloaded from AWS Instance Dashboard
 6. Click `Ok`
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/0fc469b2-4e6f-4fb2-9dad-e260183a25c6" width="11%"></img> 
@@ -450,6 +450,8 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [html-shield]:https://img.shields.io/badge/HTML-orange
 
 [repo-url]:https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial
+[github-followers-url]:https://github.com/PineappleBingoPlayer?tab=followers
+[github-fork-url]:https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/fork
 [twitter-url]:https://twitter.com/PineappleBingo_
 
 [lightsail-url]:https://aws.amazon.com/lightsail
