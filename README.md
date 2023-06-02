@@ -194,7 +194,6 @@ MobaXterm is a software toolbox for a secure connection to remote server / remot
 6. Click `Ok`
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/0fc469b2-4e6f-4fb2-9dad-e260183a25c6" width="11%"></img> 
-<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/0fc469b2-4e6f-4fb2-9dad-e260183a25c6" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c9b7100b-f2af-4f41-8a85-cedafa226567" width="11%"></img> 
 
 
@@ -205,6 +204,7 @@ MobaXterm is a software toolbox for a secure connection to remote server / remot
 4. Check "Use private key", then select `SSH key(.pem)` file.
 6. Click `Ok`
 
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/0fc469b2-4e6f-4fb2-9dad-e260183a25c6" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/6c10ae09-65eb-401a-8af3-3eb8f1918eb3" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/93143527-d0e1-48ac-93bc-266c17505042" width="11%"></img> 
 
@@ -233,7 +233,8 @@ Verify the installation:
 git --version
 ```
 ### 3. Golang
-Step1. Install Go 1.20.4:
+Part1:Installation
+Install Go 1.20.4:
 > Check out the latest release<a href="https://go.dev/dl/" target="_blank"> here </a>
 ```
 sudo wget https://golang.org/dl/go1.20.4.linux-amd64.tar.gz
@@ -250,7 +251,7 @@ Change the owner and group of this directory to root recursively:
 ```
 sudo chown -R root:root /usr/local/go
 ```
-Step2. Configuration
+Part2:Configuration
 Make new directory for Go:
 ```
 mkdir -p $HOME/go/{bin,src}
