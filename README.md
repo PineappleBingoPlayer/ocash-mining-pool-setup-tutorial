@@ -15,10 +15,9 @@
   <p align="center">
     oCash is a crypto currency that empower oLand metaverse by @overlinenetwork.
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://ocash.network" target="_blank">View Demo</a>
     |
     <a href="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/ssues">Report Bug</a>
     |
