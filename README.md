@@ -382,12 +382,24 @@ the PKCS12 key is in file `pool-cert.pfx` located at `/home/<username>`
 
 
 #### Certbot Hooks
-
+> Currently we skip this part. Will update this section shortly...
 
 ## Run oCash Mining Pool
+### Default Configuration
+
+
 
 ## Web UI
 ### Static Site
+Step1. Install `Ngnix` Web Server
+```
+
+```
+Step2. Give a read/write `permission` to current user
+```
+
+```
+Step3. Upload `index.html` file to `/home/<user>/www/`
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
