@@ -13,9 +13,8 @@
   <h2 align="center">oCash Mining Pool Setup Tutorials</h2>
 
   <p align="center">
-    oCash is a crypto currency that empower oLand metaverse by @overlinenetwork.
-    <br />
-    <br />
+    oCash is a crypto currency that empower oLand metaverse by <a href="https://twitter.com/overlinenetwork">@overlinenetwork</a>
+    
     <br />
     <a href="https://ocash.network" target="_blank">View Demo</a>
     |
@@ -35,6 +34,7 @@
 This tutorial is for setting up a `cloud based oCash Mining Pool` over AWS LightSail VPS instance.
 If you intend to set the mining pool VPS on your local device, please follow <a href="https://medium.com/@uanid/how-to-install-the-ocash-pool-169dd21c32a2" target="_blank">this</a> tutorial provided by JSY <a href="https://medium.com/@uanid/how-to-install-the-ocash-pool-169dd21c32a2" target="_blank">(@yunjuseong3)</a>
 <br/>
+> This tutorial is derivative version of <a href="https://github.com/overliner/ocash-mining-pool" target="_blank">ōCash Mining Pool by @overlinenetwork </a>.
 > This tutorial will explain steps as simple as possible for those of whom are new to the mining world including myself. Please report any bugs, or comments along with instruction steps. Your valued feedbacks will help #oland Community. 
 
 
