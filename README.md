@@ -143,6 +143,7 @@ In order to provide easy accesss for miners to your mining pool, purchasing your
 1. Purchase your domain name
 > There are many domain registration service providers. Pick any of providers here and create your own unique, eye-catching, and easy-to-remmeber domain name. ex)<a href="https://ocash.network" target="_blank">`ocash.network`</a>
 > For this tutorial, we use <a href="https://domains.google/" target="_blank">Google Domains</a>
+      
       - Login your Google account
       - Search domain name that you wish for
       - Select alternates if it's already exit
@@ -152,8 +153,8 @@ In order to provide easy accesss for miners to your mining pool, purchasing your
    - Open <a href="https://domains.google/" target="_blank">Google Domains</a>
    - Select your domain name
    - Click `DNS` then, `Manage Custom Record` 
-   - Add custom record, `Host name` as ""(Empty) `Type` as "A" then, `Data` as  `your VPS Public IP address`
-   - Add custom record, `Host name` as "WWW" `Type` as "A" then, `Data` as  `your VPS Public IP address`
+   - Add custom record, `Host name` as ""(Empty) `Type` as "A" then, `Data` as  `your VPS Public IP address(Static IP)`
+   - Add custom record, `Host name` as "WWW" `Type` as "A" then, `Data` as  `your VPS Public IP address(Static IP)`
 
   > When its succeessfully updated custom record, it will take 1-3 mins to reflect changes.
   
@@ -173,8 +174,8 @@ In order to provide easy accesss for miners to your mining pool, purchasing your
 #### What is MobaXterm?
 MobaXterm is a software toolbox for a secure connection to remote server / remote computing.
 - We will focus on `SSH Connection` and `SFTP`(Secured File Transfer Protocol)
-- `SSH Connection` : Make direct connection to remote server using SSH without opening LightSail Dashboard.
-- `STFP`: Transfer files between AWS LightSail sever and Windows(MAC)
+  - `SSH Connection` : Make direct connection to remote server using SSH without opening LightSail Dashboard.
+  - `STFP`: Transfer files between AWS LightSail VPS and local machine(Windows/Mac.
 
 #### Before We make Connections
 1. Download MobaXterm HomEditon v23.1 `Installer Edition` or `Portable Edition` can be found <a href="https://mobaxterm.mobatek.net/download-home-edition.html" targer="_blank">here</a>
@@ -207,7 +208,7 @@ MobaXterm is a software toolbox for a secure connection to remote server / remot
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/6c10ae09-65eb-401a-8af3-3eb8f1918eb3" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/93143527-d0e1-48ac-93bc-266c17505042" width="11%"></img> 
 
-> After we make a serue connection to the server, we can easily transfer files between Local computer and Cloud Server by simply drag & drop. Also, we can select and open files from server panel, then It will open up a text editor to edit & save to the cloud server directly. It will make easier for us to update `.env` and `config.json`file for the configuration which we will walk through later in this tutorial. 
+> After we make a serue connection to the server, we can easily transfer files between local computer and cloud Server by simply drag & drop. Also, we can select and open files from server panel, then It will open up a text editor to edit & save to the cloud server directly. It will make easier for us to update `.env` and `config.json`file for the configuration which we will walk through later in this tutorial. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
