@@ -124,9 +124,10 @@ This step we are going to setup VPS instance. One you login to <a href="" target
    - Select a Platform(Linux / Windows)
    - Select a bluprint
 
+> Important : Please select minimum 1GB Memeory to be able to install Go package without an issue.
+
 > For this tutorial, we will host a static website for the demonstrate purpose, so we select `Linux OS Debian v10.8` only; However, feel free to choose whichever OS you are confortable with and a blueprints for applications listed below. 
 
-> Important: Please select minimum 1GB Memeory to be able to install Go package without an issue.
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/f6de655d-d20d-4682-8526-88f38529e37d" width="11%"></img> 
 
