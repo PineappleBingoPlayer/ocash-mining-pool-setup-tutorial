@@ -201,18 +201,18 @@ MobaXterm is a software toolbox for a secure connection to remote server / remot
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/6c10ae09-65eb-401a-8af3-3eb8f1918eb3" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/93143527-d0e1-48ac-93bc-266c17505042" width="11%"></img> 
 
-> After make serue connection, we can easily transfer files between Local computer and Cloud Server by simply drag & drop. Also, we can double click on files from server panel, then It will open up a txt editor to edit and save to the cloud server directly.
+> After we make a serue connection to the server, we can easily transfer files between Local computer and Cloud Server by simply drag & drop. Also, we can select and open files from server panel, then It will open up a text editor to edit & save to the cloud server directly. It will make easier for us to update `.env` and `config.json`file for the configuration which we will walk through later in this tutorial. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Installation
-### Utility Packages
+### 1. Utility Packages
 Install essential packages:
 ```
 sudo apt install build-essential
 ```
 
-### Git
+### 2. Git
 Update APT package management tools:
 ``` 
 sudo apt update
@@ -225,7 +225,7 @@ Verify the installation:
 ```
 git --version
 ```
-### Golang
+### 3. Golang
 Step1. Install Go 1.20.4:
 > Check out the latest release<a href="https://go.dev/dl/" target="_blank"> here </a>
 ```
@@ -274,7 +274,7 @@ go version
  <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/f1eaa0b7-ee6a-425c-af8d-4b4268d8378a" width="18%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/713b8a08-a42a-4a11-8a4f-fa348461b1d8" width="18%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/2f397257-04e1-4105-98b3-9b998ffb09e7" width="18%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/4462f99e-ae96-4be2-b8cd-eb5abab38881" width="18%"></img> 
 
 
-### Go-Ethereum
+### 4. Go-Ethereum
 We are going to install go-ethereum from git repository. Check <a hfef="https://geth.ethereum.org/docs/getting-started/installing-geth" target="_blank">here</a> to find out more options.
 
 ```
@@ -289,7 +289,7 @@ make geth
 
 
 
-### Docker
+### 5. Docker
 #### Step1
 Remove old version of `docker`, `docker.io`, and `docker-engine` that may already installed previously.
 ```
