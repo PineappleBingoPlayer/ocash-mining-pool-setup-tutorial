@@ -151,7 +151,7 @@ In order to provide easy accesss for miners to your mining pool, purchasing your
    - Open <a href="https://domains.google/" target="_blank">Google Domains</a>
    - Select your domain name
    - Click `DNS` then, `Manage Custom Record` 
-   - Add custom record, `Host name` as "empty" `Type` as "A" then, `Data` as  `your VPS Public IP address`
+   - Add custom record, `Host name` as ""(Empty) `Type` as "A" then, `Data` as  `your VPS Public IP address`
    - Add custom record, `Host name` as "WWW" `Type` as "A" then, `Data` as  `your VPS Public IP address`
 
   > When its succeessfully updated custom record, it will take 1-3 mins to reflect changes.
@@ -199,6 +199,11 @@ MobaXterm is a software toolbox for a secure connection to remote server / remot
 
 ## Installation
 ### Utility Packages
+Install essential packages:
+```
+sudo apt install build-essential
+```
+
 ### Git
 Update APT package management tools:
 ``` 
@@ -212,8 +217,70 @@ Verify the installation:
 ```
 git --version
 ```
+### Golang
+Step1. Install Go 1.20.4:
+> Check out the latest release<a href="https://go.dev/dl/" target="_blank"> here </a>
+```
+sudo wget https://golang.org/dl/go1.20.4.linux-amd64.tar.gz
+```
+Verify downloaded tarball version with the SHA256:
+```
+sha256sum go1.20.4.linux-amd64.tar.gz
+```
+Extract `go1.20.4.linux-amd64.tar.gz` Go tarball file to the ‘/usr/local’ directory:
+```
+sudo tar -C /usr/local -xzf go1.20.4.linux-amd64.tar.gz
+```
+Change the owner and group of this directory to root recursively:
+```
+sudo chown -R root:root /usr/local/go
+```
+Step2. Configuration
+Make new directory for Go:
+```
+mkdir -p $HOME/go/{bin,src}
+```
+Adding Global variable $GOPATH and `ctrl+x` to close then, save and close:
+```
+nano ~/.profile
+```
+```
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin:/usr/local/go/bin
+```
 
-### Go Ethereum
+To Load the global variables:
+```
+. ~/.profile
+```
+Verify newly added path: 
+```
+echo $PATH
+```
+Verify the installation:
+``` 
+go version
+```
+
+ <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/f1eaa0b7-ee6a-425c-af8d-4b4268d8378a" width="18%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/713b8a08-a42a-4a11-8a4f-fa348461b1d8" width="18%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/2f397257-04e1-4105-98b3-9b998ffb09e7" width="18%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/4462f99e-ae96-4be2-b8cd-eb5abab38881" width="18%"></img> 
+
+
+### Go-Ethereum
+We are going to install go-ethereum from git repository. Check <a hfef="https://geth.ethereum.org/docs/getting-started/installing-geth" target="_blank">here</a> to find out more options.
+
+```
+git clone https://github.com/ethereum/go-ethereum.git
+```
+```
+cd go-ethereum
+```
+```
+make geth
+```
+
+
+
 ### Docker
 #### Step1
 Remove old version of `docker`, `docker.io`, and `docker-engine` that may already installed previously.
