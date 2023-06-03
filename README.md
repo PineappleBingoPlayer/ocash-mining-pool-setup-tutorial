@@ -340,11 +340,14 @@ Once geth account created, the account is stored in following path by geth in fi
   - For Mac: `~/Library/Ethereum/keystore`
   - For Windows: `%APPDATA%Ethereum/keystore`
   
- > where `~` is your home folder. In our case, /home/<username>
+ > where `~` is your home folder. 
 
 4. Open Notepad and copy & paste your password and save the file as `password.txt`
 5. Create `~/.ethereum/password` folder and upload `password.txt` file `using MobaXterm SFTP`
 6. Download `geth account file` as a backup and place in a secure place
+
+> Keystore Path: `/home/admin/.ethereum/keystore` <br/>
+Password.txt Path: `/home/admin/.ethereum/password/password.txt`
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/0100af46-2c37-402f-9f95-1ff3b4a590b4" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/af2ab9b1-6a8f-4ab8-909c-9247d7590012" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/29ba05a1-19ab-45ce-86c3-421a69322c54" width="11%"></img> 
 
