@@ -124,7 +124,7 @@ This step we are going to setup VPS instance. One you login to <a href="" target
    - Select a Platform(Linux / Windows)
    - Select a bluprint
 
-> Important : Please select minimum 1GB Memeory to be able to install Go package without an issue.
+> ![important-shield] Please select minimum 1GB Memeory to be able to install Go package without an issue.
 
 > For this tutorial, we will host a static website for the demonstrate purpose, so we select `Linux OS Debian v10.8` only; However, feel free to choose whichever OS you are confortable with and a blueprints for applications listed below. 
 
@@ -347,9 +347,9 @@ Once geth account created, the account is stored in following path by geth in fi
 > Keystore Path: `/home/admin/.ethereum/keystore` <br/>
 Password.txt Path: `/home/admin/.ethereum/password/password.txt`
 
-<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/0100af46-2c37-402f-9f95-1ff3b4a590b4" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/af2ab9b1-6a8f-4ab8-909c-9247d7590012" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/29ba05a1-19ab-45ce-86c3-421a69322c54" width="11%"></img> 
-
-
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/0100af46-2c37-402f-9f95-1ff3b4a590b4" width="11%"></img>
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/af2ab9b1-6a8f-4ab8-909c-9247d7590012" width="11%"></img>
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/29ba05a1-19ab-45ce-86c3-421a69322c54" width="11%"></img> 
 
 
 ### 5. Docker
@@ -407,12 +407,12 @@ Output: <pre>
 dmin@ip-xxx-xx-xx-xxx:~$ docker -v
 Docker version 24.0.2, build cb74dfc
 </pre>
-or with a Hello World Image
+Verify the installation by running `Hello World Image`
 ```
 docker run hello-world
 ```
 
-> If system arises `Permission denied` error during the steps, run the following command to grant the permission then `exit` command to logout and re-login back. 
+> ![important-shield] If system arises `Permission denied` error during the steps, run the following command to grant the permission then `exit` command to logout and re-login back. 
 
 ```
 sudo usermod -a -G docker $USER
@@ -433,6 +433,50 @@ This message shows that your installation appears to be working correctly.
 
 ## TLS Configurations
 ### Testing
+#### Step1. Install mkcert
+Update package & install necessary utility:
+```
+sudo apt update
+```
+```
+sudo apt install wget curl libnss3-tools
+```
+Download the latest release of mkcert: 
+```
+curl -s https://api.github.com/repos/FiloSottile/mkcert/releases/latest | grep browser_download_url | grep '\linux-amd64' | cut -d '"' -f 4 | wget -i -
+```
+Rename the downloaded file and move it to `/usr/bin/ folder`:
+```
+sudo mv mkcert-v*-linux-amd64 /usr/bin/mkcert
+```
+Make the file executable:
+```
+sudo chmod +x /usr/bin/mkcert
+```
+Verify the installation by checking mkcert version:
+```
+mkcert --version
+```
+output:
+<pre>
+...
+Saving to: ‘mkcert-v1.4.4-linux-amd64’
+
+mkcert-v1.4.4-linux-am 100%[==========================>]   4.57M  --.-KB/s    in 0.03s   
+
+2023-06-03 23:22:12 (138 MB/s) - ‘mkcert-v1.4.4-linux-amd64’ saved [4788866/4788866]
+
+FINISHED --2023-06-03 23:22:12--
+Total wall clock time: 0.3s
+Downloaded: 1 files, 4.6M in 0.03s (138 MB/s)
+admin@ip-xxx-xx-xx-xxx:~$ sudo mv mkcert-v*-linux-amd64 /usr/bin/mkcert
+admin@ip-xxx-xx-xx-xxx:~$ sudo chmod +x /usr/bin/mkcert
+admin@ip-xxx-xx-xx-xxx:~$ mkcert --version
+v1.4.4
+admin@ip-xxx-xx-xx-xxx:~$ 
+</pre>
+
+
 ### Production
 
 Install CertBot
@@ -443,29 +487,53 @@ Generate Key
 ```
 sudo certbot certonly --manual --preferred-challenges dns --email <your email> --domains <your domain>
 ```
-> ex) sudo certbot certonly --manual --preferred-challenges dns --email pineapple@gmail.com --domains ocash.network
+> Update `<your email>` / `<your domain>` to yours
 
-Follow instruction to add DNS TEXT Record to your domain prodivder, (Googld Domains in our case) with given `Host Name` as `_acme-challenge.<YOUR_DOMAIN>` and data as given string. Then press `Enter` to continue.
+Server displays instruction for DNS challenge:
+<pre>
+Please deploy a DNS TXT record under the name
+_acme-challenge.<your domain> with the following value:
+7EDYcJQxiBxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Before continuing, verify the record is deployed.
+Press Enter to Continue
+</pre>
 
-> Note that we need to select type as `TXT`, and add `_amc-challenge` on `Host Name`. Google Domains will automatically append .<YOUR_DOMAIN> in the end. ex) `_acme-challenge.ocash.network` 
-> If validation keep failed, you need to double check DNS Record. Everytime re-run the command, it will generate new testing key so that you need to update DNS Record.
+Follow instruction to add DNS TEXT Record to your domain prodivder, (<a href="https://domains.google.com/" target="_blank">Googld Domains</a> in our case)
+  - Open `Googld Domains` -> Select your Domain -> Click `DNS` -> `Manage Custom Record`
+  - Add new Custom DNS Record with given `Host Name` as `_acme-challenge.<YOUR_DOMAIN>` 
+  - Add `Data` as given string then `Save` 
+  - press `Enter` to continue on your server to pass the DNS challenge. 
 
-convert the key to PKCS12 format using
+> Note that we need to select `type` as `TXT`, and add `_amc-challenge` in the `Host Name` field. Google Domains will automatically append `.<YOUR_DOMAIN>` in the end. ex) `_acme-challenge.ocash.network`, and the `Data` will be wrapped with double quotation marks.
+
+> If the verification failed, you need to double check DNS Record, then repeat the process until you pass the challenge. Everytime re-run the command, it will generate new testing value so that you need to update DNS Record.  
+
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c2b3f086-c24a-4f47-be9b-4893250dbab1" width="11%"></img> 
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c278b688-f2a1-4db6-9d91-3544ad7acd1d" width="11%"></img>
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/d9c5fec2-8ed7-401c-acf8-578663d35eb9" width="11%"></img> 
+
+After pass the challenge, we now convert the key to PKCS12 format using
 ```
 sudo openssl pkcs12 -export -out pool-cert.pfx -inkey /etc/letsencrypt/live/<your domain>/privkey.pem -in /etc/letsencrypt/live/<your domain>/fullchain.pem
 ```
-the PKCS12 key is in file `pool-cert.pfx` located at `/home/<username>`
+> Update `<your domain>` to yours
+
+the PKCS12 key is in file `pool-cert.pfx` located at `/home/<username>` ex) `/home/admin`
+
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/984d6a68-13b6-4c52-adb5-96ee95f1f86d" width="11%"></img>
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c980c52a-127d-4b78-bb2c-d36b00fc9d26" width="11%"></img> 
 
-<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/77dced4a-f177-4fb8-a1c4-07cdb5b03633" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c2b3f086-c24a-4f47-be9b-4893250dbab1" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/05d992fe-f4fe-40f0-b9a9-f03cdc995d0b" width="11%"></img> 
-
-<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/d9c5fec2-8ed7-401c-acf8-578663d35eb9" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c278b688-f2a1-4db6-9d91-3544ad7acd1d" width="11%"></img> 
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/77dced4a-f177-4fb8-a1c4-07cdb5b03633" width="11%"></img> 
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/05d992fe-f4fe-40f0-b9a9-f03cdc995d0b" width="11%"></img> 
 
 
 #### Certbot Hooks
 > Currently we skip this part. Will update this section shortly...
+
+## .evn / config.json Configuration
+
+
 
 ## Run oCash Mining Pool
 ### Default Configuration
@@ -520,6 +588,7 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [required-shield]:https://img.shields.io/badge/required-red
 [recommended-shield]:https://img.shields.io/badge/recommended-green
 [optional-shield]:https://img.shields.io/badge/optional-yellow
+[important-shield]:https://img.shields.io/badge/Important-orange
 
 <!-- Social-->
 [github-fork-shield]:https://img.shields.io/github/forks/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial?style=social
