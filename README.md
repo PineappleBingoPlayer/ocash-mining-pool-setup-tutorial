@@ -288,6 +288,7 @@ go version
 
 
 ### 4. Go-Ethereum
+Part1. Installation
 We are going to install go-ethereum from git repository. Check <a hfef="https://geth.ethereum.org/docs/getting-started/installing-geth" target="_blank">here</a> to find out more options.
 
 ```
@@ -299,7 +300,23 @@ cd go-ethereum
 ```
 make geth
 ```
-> This command will install Go-Ethereum and it will take .... 
+> Note: If Go build exits with “signal: killed”, please check your server memory. Minimum 1GB Memory required to install package successfully.
+
+Part2. Create geth account
+Add export path to run geth command:
+```
+nano ~/.profile
+```
+```
+export PATH=$HOME/go-ethereum/build/bin:$PATH
+```
+Reload environmental variable:
+```
+. ~/.profile
+```
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/139562e2-0c78-4139-b160-7e0e488c4ac1" width="11%"></img> 
+
+
 
 
 
