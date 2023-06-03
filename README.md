@@ -303,19 +303,50 @@ make geth
 > Note: If Go build exits with “signal: killed”, please check your server memory. Minimum 1GB Memory required to install package successfully.
 
 Part2. Create geth account
-Add export path to run geth command:
+1. Add export path to run geth command:
 ```
 nano ~/.profile
 ```
 ```
 export PATH=$HOME/go-ethereum/build/bin:$PATH
 ```
-Reload environmental variable:
+2. Reload environmental variable:
 ```
 . ~/.profile
 ```
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/139562e2-0c78-4139-b160-7e0e488c4ac1" width="11%"></img> 
 
+3. Create geth account with following command:
+```
+geth account new
+```
+ex)
+<pre>
+geth account new
+Your new account is locked with a password. Please give a password. Do not forget this password.
+Passphrase:
+Repeat passphrase: 
+Address: {008aeeda4d805471df9b2a5b0f38a0c3bcba786b}
+$ geth account list
+Account #0: {8a1c4d573cc29a96547816522cfe0b266e88abac} keystore:~/.ethereum/keystore/UTC--<created_date_time>--  008aeeda4d805471df9b2a5b0f38a0c3bcba786b
+</pre>
+
+> System will require a password for your geth account. Type password or create one <a href="https://www.lastpass.com/features/password-generator" target="_blank">here</a>. 
+
+> 
+
+Once geth account created, the account is stored in following path by geth in file.
+  - For Linux `~/.ethereum/keystore
+  - For Mac: `~/Library/Ethereum/keystore
+  - For Windows: `%APPDATA%Ethereum/keystore`
+  
+ > where `~` is your home folder. In our case, /home/<username>
+
+4. Open Note pad and copy & paste your password and save the file as `password.txt`
+5. Create `~/.ethereum/password` folder and upload `password.txt`file `using MobaXterm SFTP`
+6. Download `geth account file` as a backup and place in a secure place
+  
+  
 
 
 
