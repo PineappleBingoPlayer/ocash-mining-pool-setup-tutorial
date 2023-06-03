@@ -303,14 +303,14 @@ make geth
 > Note: If Go build exits with “signal: killed”, please check your server memory. Minimum 1GB Memory required to install package successfully.
 
 Part2. Create geth account
-1. Add export path to run geth command:
+1. Open profile file and add export path then `Ctrl+X` to Save & Close:
 ```
 nano ~/.profile
 ```
 ```
 export PATH=$HOME/go-ethereum/build/bin:$PATH
 ```
-2. Reload environmental variable:
+2. Reload environmental variable with command:
 ```
 . ~/.profile
 ```
@@ -322,18 +322,16 @@ geth account new
 ```
 ex)
 <pre>
-geth account new
+$ geth account new
 Your new account is locked with a password. Please give a password. Do not forget this password.
 Passphrase:
 Repeat passphrase: 
-Address: {008aeeda4d805471df9b2a5b0f38a0c3bcba786b}
-$ geth account list
-Account #0: {8a1c4d573cc29a96547816522cfe0b266e88abac} keystore:~/.ethereum/keystore/UTC--<created_date_time>--  008aeeda4d805471df9b2a5b0f38a0c3bcba786b
+Address: {168bc315a2ee09042d83d7c5811b533620531f67}
 </pre>
-
 
 > System will require a password for your geth account. Type password or create one <a href="https://www.lastpass.com/features/password-generator" target="_blank">here</a> 
 
+> More geth commands list by typing `geth help`
 
 Once geth account created, the account is stored in following path by geth in file
   - For Linux `~/.ethereum/keystore`
@@ -389,20 +387,48 @@ Check the status:
 ```
 sudo systemctl status docker
 ```
+output: <pre>
+admin@ip-xxx-xx-xx-xxx:~$ sudo systemctl status docker
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sat 2023-06-03 22:12:45 UTC; 18s ago
+     Docs: https://docs.docker.com
+ Main PID: 2588 (dockerd)
+    Tasks: 7
+   Memory: 33.7M
+   CGroup: /system.slice/docker.service
+           └─2588 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+</pre>
 Verify the installation by checking version of the Docker
 ```
 docker -v
 ```
+Output: <pre>
+dmin@ip-xxx-xx-xx-xxx:~$ docker -v
+Docker version 24.0.2, build cb74dfc
+</pre>
 or with a Hello World Image
 ```
 docker run hello-world
 ```
 
-> If system arises `Permission denied` error during the steps, run the following command then continue the rest of the steps.
+> If system arises `Permission denied` error during the steps, run the following command to grant the permission then `exit` command to logout and re-login back. 
 
 ```
 sudo usermod -a -G docker $USER
 ```
+Repeat `docker run hello-world` will display following output:
+<pre>
+admin@ip-xxx-xx-xx-xxx:~$ docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+719385e32844: Pull complete 
+Digest: sha256:fc6cf906cbfa013e80938cdf0bb199fbdbb86d6e3e013783e5a766f50f5dbce0
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+</pre>
 
 
 ## TLS Configurations
