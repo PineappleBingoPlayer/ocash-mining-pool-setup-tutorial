@@ -331,23 +331,22 @@ $ geth account list
 Account #0: {8a1c4d573cc29a96547816522cfe0b266e88abac} keystore:~/.ethereum/keystore/UTC--<created_date_time>--  008aeeda4d805471df9b2a5b0f38a0c3bcba786b
 </pre>
 
-> System will require a password for your geth account. Type password or create one <a href="https://www.lastpass.com/features/password-generator" target="_blank">here</a>. 
 
-> 
+> System will require a password for your geth account. Type password or create one <a href="https://www.lastpass.com/features/password-generator" target="_blank">here</a> 
 
-Once geth account created, the account is stored in following path by geth in file.
-  - For Linux `~/.ethereum/keystore
-  - For Mac: `~/Library/Ethereum/keystore
+
+Once geth account created, the account is stored in following path by geth in file
+  - For Linux `~/.ethereum/keystore`
+  - For Mac: `~/Library/Ethereum/keystore`
   - For Windows: `%APPDATA%Ethereum/keystore`
   
  > where `~` is your home folder. In our case, /home/<username>
 
-4. Open Note pad and copy & paste your password and save the file as `password.txt`
-5. Create `~/.ethereum/password` folder and upload `password.txt`file `using MobaXterm SFTP`
+4. Open Notepad and copy & paste your password and save the file as `password.txt`
+5. Create `~/.ethereum/password` folder and upload `password.txt` file `using MobaXterm SFTP`
 6. Download `geth account file` as a backup and place in a secure place
-  
-  
 
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/0100af46-2c37-402f-9f95-1ff3b4a590b4" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/af2ab9b1-6a8f-4ab8-909c-9247d7590012" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/29ba05a1-19ab-45ce-86c3-421a69322c54" width="11%"></img> 
 
 
 
