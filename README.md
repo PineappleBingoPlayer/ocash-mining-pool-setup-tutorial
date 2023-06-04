@@ -487,7 +487,8 @@ cp .env.example .env && cp config/config.example.json config/config.json
 
 ### Step2. Update .env/config.json
 -----
-*.env
+
+* .env
   - Open `.env` file from `MobaXterm`.
   - Replace `POOL_ADDRESS` with `geth account address`.
   - Replace `KEYSTORE_DIR_PATH` with `"/home/admin/.ethereum/keystore"`.
@@ -516,12 +517,18 @@ cp .env.example .env && cp config/config.example.json config/config.json
 * Double check the permission gratned on `keystore` and `password` files.
 
 ### Step3 Run Docker Container
+------
 run the container(s):
 ```
 docker compose up
 ```
 
 ### Step4 Test
+------
+
+<br/>
+<br/>
+
 
 ## TLS Configurations ![recommended-shield]
 ### Testing Setup
