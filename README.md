@@ -451,8 +451,79 @@ Hello from Docker!
 This message shows that your installation appears to be working correctly.
 </pre>
 
+## Running oCash Mining Pool
+### Step1. Clone the mining pool repo.
+-----
+clone the pool git repository:
+```
+git clone https://github.com/overliner/ocash-mining-pool.git
+```
+output:
+<pre>
+admin@ip-xxx-xx-xx-xxx:~$ git clone https://github.com/overliner/ocash-mining-pool.git
+Cloning into 'ocash-mining-pool'...
+remote: Enumerating objects: 25, done.
+remote: Counting objects: 100% (25/25), done.
+remote: Compressing objects: 100% (16/16), done.
+remote: Total 25 (delta 10), reused 22 (delta 8), pack-reused 0
+Unpacking objects: 100% (25/25), done.
+admin@ip-xxx-xx-xx-xxx:~$ 
+</pre>
 
-## TLS Configurations
+move to the repository clone:
+```
+cd ocash-mining-pool
+```
+output:
+<pre>
+admin@ip-xxx-xx-xx-xxx:~$ cd ocash-mining-pool
+admin@ip-xxx-xx-xx-xxx:~/ocash-mining-pool$ 
+</pre>
+
+copy template configuration example files(`.env.example, `config.example.json`) to actual ones(`.env`, `config.json`):
+```
+cp .env.example .env && cp config/config.example.json config/config.json
+```
+
+### Step2. Update .env/config.json
+-----
+*.env
+  - Open `.env` file from `MobaXterm`.
+  - Replace `POOL_ADDRESS` with `geth account address`.
+  - Replace `KEYSTORE_DIR_PATH` with `"/home/admin/.ethereum/keystore"`.
+  - Replace `KEYSTORE_PASSWORD_FILE_PATH` with `"/home/admin/.ethereum/password"`.
+  - Replace `POOL_TLS_CERT_PATH` after we complete <a href="">TLS Configuration steps</a> below.
+
+> Type `geth account list` to check wallet address that we created from <a href="">this steps</a>.
+
+> By default, Keystore file stored in `~/.ethereum/keystore` in Linux. If you updated the path, you need to specify the exact path and update on `docker-compose.yml` lineNo.67 as well.<br/>
+
+> Make sure to upload `password.txt` file that we previsouly created from <a href="">this steps</a> to `"/home/admin/.ethereum/password"` path. Otherwise, we need to specify it and update on `docker-compose.yml` lineNo.68 as well.
+
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/52e8ca05-f382-4c8d-bfc8-7b7e09552139" width="11%"></img> 
+
+* config.json
+  - Open `config.json` file located in `/home/admin/ocash-mining-pool/config/` from `MobaXterm`
+  - On lineNo.72, Replace `<pool ocash address>` with `geth account address`.
+  - On lineNo.76, Replace `<rewards ocash address>` with `geth account address` for now.
+ 
+> `<pool ocash address>` is the only needed one for basic setup, must match `POOL_ADDRESS` in .env
+
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/757a0d94-f786-40b3-909d-ed0c60f80e52" width="11%"></img> 
+
+* Make sure Keystore file in the directory you filled in `.env`
+* Make sure Password file in the directory you filled in `.env`
+* Double check the permission gratned on `keystore` and `password` files.
+
+### Step3 Run Docker Container
+run the container(s):
+```
+docker compose up
+```
+
+### Step4 Test
+
+## TLS Configurations ![recommended-shield]
 ### Testing Setup
 ------
 #### Step1. Install mkcert
@@ -498,7 +569,7 @@ v1.4.4
 admin@ip-xxx-xx-xx-xxx:~$ 
 </pre>
 
-#### Step2. Make Certification
+#### Step2. Generate Certificate
 ```
 mkcer -install
 ```
@@ -510,6 +581,7 @@ The local CA is now installed in the system trust store! ⚡
 
 admin@ip-xxx-xx-xx-xxx:~$ 
 </pre>
+
 
 ```
 mkcert -cert-file pool-cert.pem -key-file pool-cert.key <POOL_PUBLIC_IP_ADDRESS>
@@ -531,10 +603,11 @@ It will expire on 4 September 2025 
 admin@ip-xxx-xx-xx-xxx:~$ 
 </pre>
 
+
 ```
 openssl pkcs12 -export -out pool-cert-self-signed.pfx -inkey pool-cert.key -in pool-cert.pem
 ```
-<pre>
+output: <pre>
 admin@ip-xxx-xx-xx-xxx:~$ openssl pkcs12 -export -out pool-cert-self-signed.pfx -inkey poo
 l-cert.key -in pool-cert.pem
 Enter Export Password:
@@ -542,6 +615,7 @@ Verifying - Enter Export Password:
 admin@ip-xxx-xx-xx-xxx:~$ 
 </pre>
 > choose a password or leave blank for no password
+
 
 `pool-cert-self-signed.pfx`
 
@@ -599,7 +673,7 @@ the PKCS12 key is in file `pool-cert.pfx` located at `/home/<username>` ex) `/ho
 #### Certbot Hooks
 > Currently we skip this part. Will update this section shortly...
 
-## .evn / config.json Configuration
+
 
 
 
