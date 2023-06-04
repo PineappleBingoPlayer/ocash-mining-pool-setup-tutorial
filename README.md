@@ -89,6 +89,7 @@ Throughout this tutorial, we are going to set up Linux VPS(Virtual Private Serve
 > Feel free to skip over any of following setps if you already completed. 
 
 ### GitHub Account ![required-shield]
+------
 Step1. Create Account: 
 In order to clone the git repository, we need a GitHub ID & Password. If you don't have one yet, please sign up <a href="https://github.com/" target="_blank">here</a>.
 
@@ -103,6 +104,7 @@ Step2. Create `Personal Access Token`:
 
 
 ### AWS IAM Set up ![recommended-shield]
+------
 Before we are setting up VPS instance,  Sign up AWS account(`root user`) <a href="" target="_blank">here</a> if you don't have one yet. Then we are going to set up `IAM user` instead of using `root user`.
 
 1. Login in as `Root User` with your Email address
@@ -118,6 +120,7 @@ Before we are setting up VPS instance,  Sign up AWS account(`root user`) <a href
 src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/73449a82-748f-4021-85b3-f0729551aad6" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/cf6c9853-7381-462d-bb1d-6a1ec558ee29" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/7747371b-5f07-484e-8af4-c3018a93e308" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/bc8df107-02de-4dd1-a096-f85cd88fafbf" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/06e2efea-f076-4a88-abf7-e35385ae4378" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/712c7062-5425-4f3c-ab68-d3f03b31262e" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/72080b6e-4b35-4051-99f2-241c121d0306" width="11%"></img> 
 
 ### AWS LightSail Set Up ![required-shield]
+------
 This step we are going to setup VPS instance. One you login to <a href="" target="_blank">AWS Console </a> you can simply type `LightSail' on the searchbar or Find the link <a href="" target="_blank">here</a>
 1. Create Instance
    - Select Instance Location
@@ -144,6 +147,7 @@ This step we are going to setup VPS instance. One you login to <a href="" target
 
 
 ### Purchase & Connect Domain ![required-shield]
+------
 In order to provide easy accesss for miners to your mining pool, purchasing your own domain is recomened.
 1. Purchase your domain name
 > There are many domain registration service providers. Pick any of providers here and create your own unique, eye-catching, and easy-to-remmeber domain name. ex)<a href="https://ocash.network" target="_blank">`ocash.network`</a>
@@ -172,8 +176,9 @@ In order to provide easy accesss for miners to your mining pool, purchasing your
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br/>
 
-### MobaXterm ![optional-shield]
-> This is optional session. Feel free to skip over if you have prefer using `AWS CLI` SCP file transfer and connect to the server through LightSail instance dashboard.
+### MobaXterm ![recommended-shield]
+------
+> Feel free to skip this secection if you have/prefer using other softwares for `SSH` connection and `STFP` file transfer.
 <br/>
 
 #### What is MobaXterm?
@@ -219,12 +224,14 @@ MobaXterm is a software toolbox for a secure connection to remote server / remot
 
 ## Installation
 ### 1. Utility Packages
+------
 Install essential packages:
 ```
 sudo apt install build-essential
 ```
 
 ### 2. Git
+------
 Update APT package management tools:
 ``` 
 sudo apt update
@@ -238,6 +245,7 @@ Verify the installation:
 git --version
 ```
 ### 3. Golang
+------
 Part1:Installation
 Install Go 1.20.4:
 > Check out the latest release<a href="https://go.dev/dl/" target="_blank"> here </a>
@@ -288,7 +296,8 @@ go version
 
 
 ### 4. Go-Ethereum
-Part1. Installation
+------
+#### Step1. Installation
 We are going to install go-ethereum from git repository. Check <a hfef="https://geth.ethereum.org/docs/getting-started/installing-geth" target="_blank">here</a> to find out more options.
 
 ```
@@ -302,7 +311,7 @@ make geth
 ```
 > Note: If Go build exits with “signal: killed”, please check your server memory. Minimum 1GB Memory required to install package successfully.
 
-Part2. Create geth account
+#### Step2. Create geth account
 1. Open profile file and add export path then `Ctrl+X` to Save & Close:
 ```
 nano ~/.profile
@@ -353,8 +362,9 @@ Password.txt Path: `/home/admin/.ethereum/password/password.txt`
 
 
 ### 5. Docker
-#### Step1
-Remove old version of `docker`, `docker.io`, and `docker-engine` that may already installed previously.
+------
+#### Installation
+Remove old version of `docker`, `docker.io`, and `docker-engine` that may already installed previously:
 ```
 sudo apt-get purge docker lxc-docker docker-engine docker.io
 ```
@@ -366,8 +376,7 @@ Install required dependencies:
 ```
 sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common
 ```
-#### Step2
-Install Docker using the Repository on Debian10
+Install Docker using the Repository on Debian10:
 ```
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 ```
@@ -399,7 +408,7 @@ admin@ip-xxx-xx-xx-xxx:~$ sudo systemctl status docker
    CGroup: /system.slice/docker.service
            └─2588 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
 </pre>
-Verify the installation by checking version of the Docker
+Verify the installation by checking version of the Docker:
 ```
 docker -v
 ```
@@ -407,12 +416,12 @@ Output: <pre>
 dmin@ip-xxx-xx-xx-xxx:~$ docker -v
 Docker version 24.0.2, build cb74dfc
 </pre>
-Verify the installation by running `Hello World Image`
+Verify the installation by running `Hello World Image`:
 ```
 docker run hello-world
 ```
 
-> ![important-shield] If system arises `Permission denied` error during the steps, run the following command to grant the permission then `exit` command to logout and re-login back. 
+> ![important-shield] If system arises `Permission denied` error during the steps, run the following command to grant the permission then `exit` command to logout and re-login back:
 
 ```
 sudo usermod -a -G docker $USER
@@ -432,7 +441,8 @@ This message shows that your installation appears to be working correctly.
 
 
 ## TLS Configurations
-### Testing
+### Testing Setup
+------
 #### Step1. Install mkcert
 Update package & install necessary utility:
 ```
@@ -476,9 +486,55 @@ v1.4.4
 admin@ip-xxx-xx-xx-xxx:~$ 
 </pre>
 
+#### Step2. Make Certification
+```
+mkcer -install
+```
+output:
+<pre>
+admin@ip-xxx-xx-xx-xxx:~$ mkcert -install
+Created a new local CA 
+The local CA is now installed in the system trust store! ⚡
 
-### Production
+admin@ip-xxx-xx-xx-xxx:~$ 
+</pre>
 
+```
+mkcert -cert-file pool-cert.pem -key-file pool-cert.key <POOL_PUBLIC_IP_ADDRESS>
+```
+> Replace `<POOL_PUBLIC_IP_ADDRESS>` with your `server's public static IP Addresss`
+
+output:
+<pre>
+admin@ip-xxx-xx-xx-xxx:~$ mkcert -cert-file pool-cert.pem -key-file pool-cert.key 54.173.9
+2.14
+
+Created a new certificate valid for the following names 
+ - "<POOL_PUBLIC_IP_ADDRESS>"
+
+The certificate is at "pool-cert.pem" and the key at "pool-cert.key" ✅
+
+It will expire on 4 September 2025 
+
+admin@ip-xxx-xx-xx-xxx:~$ 
+</pre>
+
+```
+openssl pkcs12 -export -out pool-cert-self-signed.pfx -inkey pool-cert.key -in pool-cert.pem
+```
+<pre>
+admin@ip-xxx-xx-xx-xxx:~$ openssl pkcs12 -export -out pool-cert-self-signed.pfx -inkey poo
+l-cert.key -in pool-cert.pem
+Enter Export Password:
+Verifying - Enter Export Password:
+admin@ip-xxx-xx-xx-xxx:~$ 
+</pre>
+> choose a password or leave blank for no password
+
+`pool-cert-self-signed.pfx`
+
+### Production Setup
+------
 Install CertBot
 ```
 sudo apt-get install certbot
