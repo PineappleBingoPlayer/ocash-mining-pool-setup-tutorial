@@ -589,7 +589,6 @@ The local CA is now installed in the system trust store! ⚡
 admin@ip-xxx-xx-xx-xxx:~$ 
 </pre>
 
-
 ```
 mkcert -cert-file pool-cert.pem -key-file pool-cert.key <POOL_PUBLIC_IP_ADDRESS>
 ```
@@ -597,8 +596,7 @@ mkcert -cert-file pool-cert.pem -key-file pool-cert.key <POOL_PUBLIC_IP_ADDRESS>
 
 output:
 <pre>
-admin@ip-xxx-xx-xx-xxx:~$ mkcert -cert-file pool-cert.pem -key-file pool-cert.key 54.173.9
-2.14
+admin@ip-xxx-xx-xx-xxx:~$ mkcert -cert-file pool-cert.pem -key-file pool-cert.key 54.173.92.14
 
 Created a new certificate valid for the following names 
  - "<POOL_PUBLIC_IP_ADDRESS>"
@@ -610,24 +608,29 @@ It will expire on 4 September 2025 
 admin@ip-xxx-xx-xx-xxx:~$ 
 </pre>
 
+<!-- 
+`pool-cert-self-signed.pfx` 
+-->
+<br/>
 
 ```
 openssl pkcs12 -export -out pool-cert-self-signed.pfx -inkey pool-cert.key -in pool-cert.pem
 ```
-output: <pre>
-admin@ip-xxx-xx-xx-xxx:~$ openssl pkcs12 -export -out pool-cert-self-signed.pfx -inkey poo
-l-cert.key -in pool-cert.pem
+
+output: 
+<pre>
+admin@ip-xxx-xx-xx-xxx:~$ openssl pkcs12 -export -out pool-cert-self-signed.pfx -inkey pool-cert.key -in pool-cert.pem
 Enter Export Password:
 Verifying - Enter Export Password:
 admin@ip-xxx-xx-xx-xxx:~$ 
 </pre>
-> choose a password or leave blank for no password
 
+> choose a password or leave `blank` for `no password`
 
-`pool-cert-self-signed.pfx`
 
 ### Production Setup
 ------
+
 Install CertBot
 ```
 sudo apt-get install certbot
@@ -661,10 +664,12 @@ Follow instruction to add DNS TEXT Record to your domain prodivder, (<a href="ht
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c278b688-f2a1-4db6-9d91-3544ad7acd1d" width="11%"></img>
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/d9c5fec2-8ed7-401c-acf8-578663d35eb9" width="11%"></img> 
 
-After pass the challenge, we now convert the key to PKCS12 format using
+After pass the challenge, we now convert the key to PKCS12 format using:
+
 ```
 sudo openssl pkcs12 -export -out pool-cert.pfx -inkey /etc/letsencrypt/live/<your domain>/privkey.pem -in /etc/letsencrypt/live/<your domain>/fullchain.pem
 ```
+
 > Update `<your domain>` to yours
 
 the PKCS12 key is in file `pool-cert.pfx` located at `/home/<username>` ex) `/home/admin`
@@ -679,14 +684,6 @@ the PKCS12 key is in file `pool-cert.pfx` located at `/home/<username>` ex) `/ho
 
 #### Certbot Hooks
 > Currently we skip this part. Will update this section shortly...
-
-
-
-
-
-## Run oCash Mining Pool
-### Default Configuration
-
 
 
 ## Web UI
@@ -762,30 +759,10 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
 [contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo_name/network/members
+
 [stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
 [stars-url]: https://github.com/github_username/repo_name/stargazers
 [issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
 [issues-url]: https://github.com/github_username/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
+
 [product-screenshot]: images/screenshot.png
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
