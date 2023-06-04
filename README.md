@@ -279,7 +279,9 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin:/usr/local/go/bin
 ```
 
-To Load the global variables:
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/2f397257-04e1-4105-98b3-9b998ffb09e7" width="18%"></img> 
+
+Reload environmental variable with command:
 ```
 . ~/.profile
 ```
@@ -287,13 +289,23 @@ Verify newly added path:
 ```
 echo $PATH
 ```
+output:
+<pre>
+admin@ip-xxx-xx-xx-xx:~$ echo $PATH
+/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/admin/go/bin:/home/admin/go/bin:/usr/local/go/bin
+admin@ip-xxx-xx-xx-xx:~$
+</pre>
+
 Verify the installation:
 ``` 
 go version
 ```
-
- <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/f1eaa0b7-ee6a-425c-af8d-4b4268d8378a" width="18%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/713b8a08-a42a-4a11-8a4f-fa348461b1d8" width="18%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/2f397257-04e1-4105-98b3-9b998ffb09e7" width="18%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/4462f99e-ae96-4be2-b8cd-eb5abab38881" width="18%"></img> 
-
+output:
+<pre>
+admin@ip-xxx-xx-xx-xx:~$ go version
+go version go1.20.4 linux/amd64
+admin@ip-xxx-xx-xx-xx:~$
+</pre>
 
 ### 4. Go-Ethereum
 ------
