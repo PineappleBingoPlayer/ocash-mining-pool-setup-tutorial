@@ -153,10 +153,10 @@ In order to provide easy accesss for miners to your mining pool, purchasing your
 > There are many domain registration service providers. Pick any of providers here and create your own unique, eye-catching, and easy-to-remmeber domain name. ex)<a href="https://ocash.network" target="_blank">`ocash.network`</a>
 > For this tutorial, we use <a href="https://domains.google/" target="_blank">Google Domains</a>
       
-      - Login your Google account
-      - Search domain name that you wish for
-      - Select alternates if it's already exit
-      - Make a purchase
+   - Login your Google account
+   - Search domain name that you wish for
+   - Select alternates if it's already exit
+   - Make a purchase
 
 2. Connect your domain
    - Open <a href="https://domains.google/" target="_blank">Google Domains</a>
@@ -322,6 +322,18 @@ cd go-ethereum
 make geth
 ```
 > Note: If Go build exits with “signal: killed”, please check your server memory. Minimum 1GB Memory required to install package successfully.
+
+Update geth:
+Change directory from home to go-ethereum
+```
+cd go-ethereum 
+```
+```
+git pull
+```
+```
+make geth
+```
 
 #### Step2. Create geth account
 1. Open profile file and add export path then `Ctrl+X` to Save & Close:
@@ -754,15 +766,5 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 
 [lightsail-url]:https://aws.amazon.com/lightsail
 [html-url]:https://www.w3schools.com/html/
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
-
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo_name/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
 
 [product-screenshot]: images/screenshot.png
