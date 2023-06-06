@@ -34,7 +34,7 @@
 ## Before We Start
 
 This tutorial is for setting up a `cloud based oCash Mining Pool` over AWS LightSail VPS instance.
-If you intend to set the mining pool VPS on your local device, please follow <a href="https://medium.com/@uanid/how-to-install-the-ocash-pool-169dd21c32a2" target="_blank">this</a> tutorial provided by JSY <a href="https://medium.com/@uanid/how-to-install-the-ocash-pool-169dd21c32a2" target="_blank">(@yunjuseong3)</a>
+If you intend to set the mining pool VPS on your local device, please follow <a href="https://medium.com/@uanid/how-to-install-ocash-mining-pool-full-version-2a5ebf587d35" target="_blank">this</a> tutorial provided by @uanid
 <br/>
 > This tutorial is derivative version of <a href="https://github.com/overliner/ocash-mining-pool" target="_blank">ōCash Mining Pool by @overlinenetwork </a>.
 > We will walk through the steps as simple as possible for those of whom are new to the mining world including myself. Please report any bugs, or comments along with instruction steps. Your valued feedbacks will help #oland Community. 
@@ -323,8 +323,8 @@ make geth
 ```
 > Note: If Go build exits with “signal: killed”, please check your server memory. Minimum 1GB Memory required to install package successfully.
 
-Update geth:
-Change directory from home to go-ethereum
+#### Step2. Update
+Change directory from home to go-ethereum:
 ```
 cd go-ethereum 
 ```
