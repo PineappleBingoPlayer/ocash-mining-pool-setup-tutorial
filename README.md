@@ -56,36 +56,36 @@ If you intend to set the mining pool VPS on your local device, please follow <a 
       <ul>
         <li><a href="#prerequisites">Prerequisites</a>
             <ul>
-              <li><a href="#built-with">GitHub Account</a></li>
-              <li><a href="#built-with">AWS IAM Set up</a></li>
-              <li><a href="#built-with">AWS LightSail Set Up</a></li>
-              <li><a href="#built-with">Purchase & Connect Domain</a></li>
-              <li><a href="#built-with">MobaXterm</a></li>
+              <li><a href="#gitHub-account">GitHub Account</a></li>
+              <li><a href="#aws-iam-set-up">AWS IAM Set up</a></li>
+              <li><a href="#aws-lightsail-set-up">AWS LightSail Set Up</a></li>
+              <li><a href="#purchase-&-connect-domain">Purchase & Connect Domain</a></li>
+              <li><a href="#mobaxterm">MobaXterm</a></li>
             </ul>
         </li>
         <li><a href="#installation">Installation</a>
              <ul>
-              <li><a href="#built-with">Utility Packages</a></li>
-              <li><a href="#built-with">Git</a></li>
-              <li><a href="#built-with">Golang</a></li>
-              <li><a href="#built-with">Go-Ethereum</a></li>
-              <li><a href="#built-with">Docker</a></li>
+              <li><a href="#utility-packages">Utility Packages</a></li>
+              <li><a href="#git">Git</a></li>
+              <li><a href="#golang">Golang</a></li>
+              <li><a href="#go-ethereum">Go-Ethereum</a></li>
+              <li><a href="#docker">Docker</a></li>
             </ul>
         </li>
       </ul>
     </li>
-    <li><a href="#usage">Running oCash Mining Pool</a>
+    <li><a href="#running-ocash-mining-pool">Running oCash Mining Pool</a>
         <ul>
-           <li><a href="#built-with">Step1. Clone the mining pool repo.</a></li>
-           <li><a href="#built-with">Step2. Update .env/config.json</a></li>
-           <li><a href="#built-with">Step3 Run Docker Container</a></li>
-           <li><a href="#built-with">Step4 Test</a></li>
+           <li><a href="#step1.-clone-the-mining-pool-repo">Step1. Clone the mining pool repo.</a></li>
+           <li><a href="#Step2. Update .env/config.json">Step2. Update .env/config.json</a></li>
+           <li><a href="#Step3 Run Docker Container">Step3 Run Docker Container</a></li>
+           <li><a href="#Step4 Test">Step4 Test</a></li>
       </ul>  
     </li>
-    <li><a href="#roadmap">TLS Configurations</a>
+    <li><a href="#tls-configurations">TLS Configurations</a>
         <ul>
-          <li><a href="#built-with">Testing Setup</a></li>
-          <li><a href="#built-with">Production Setup</a></li>
+          <li><a href="testing-setup">Testing Setup</a></li>
+          <li><a href="#production-setup">Production Setup</a></li>
       </ul> 
     </li>
     <li><a href="#contributing">Web UI</a></li>
