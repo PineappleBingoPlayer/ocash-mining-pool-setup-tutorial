@@ -505,7 +505,7 @@ cp .env.example .env && cp config/config.example.json config/config.json
   - Replace `POOL_ADDRESS` with `geth account address`.
   - Replace `KEYSTORE_DIR_PATH` with `"/home/admin/.ethereum/keystore"`.
   - Replace `KEYSTORE_PASSWORD_FILE_PATH` with `"/home/admin/.ethereum/password"`.
-  - Replace `POOL_TLS_CERT_PATH` after we complete <a href="">TLS Configuration steps</a> below.
+  - Replace `POOL_TLS_CERT_PATH` after we complete <a href="">TLS Configuration steps(Test/Production)</a> below.
 
 > Type `geth account list` to check wallet address that we created from <a href="">this steps</a>.
 
@@ -637,7 +637,25 @@ Verifying - Enter Export Password:
 admin@ip-xxx-xx-xx-xxx:~$ 
 </pre>
 
-> choose a password or leave `blank` for `no password`
+> choose a password or leave `blank` for `no password` then press `Enter`
+
+#### Step3. Update Configuration
+
+1. Open `.env` file and updated `POOL_TLS_CERT_PATH` to the location of `pool-cert.pfx` file; `/home/admin`
+
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/e0e0e865-d614-4d7d-a7f9-e6cfb9fd7db8" width="11%"></img> 
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/4755d8d4-ac48-4c79-8109-d7a29e93f756" width="11%"></img> 
+
+2. Open `config/config.json` file
+   - Replace LinNo.92, `tls` from `false` to `true,`
+   - Replace LineNo.94, `tlsPfxPassword` from `"<fill in>"` to the password you setup above step. 
+
+> if you left password `blank` leave `tlsPfxPassword` as `""`(blank).
+
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/984d6a68-13b6-4c52-adb5-96ee95f1f86d" width="11%"></img>
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c980c52a-127d-4b78-bb2c-d36b00fc9d26" width="11%"></img> 
+
+3. Save changes and upload to the server then follow rest of configuration steps <a href="" >here</a> to run the mining pool
 
 
 ### Production Setup
