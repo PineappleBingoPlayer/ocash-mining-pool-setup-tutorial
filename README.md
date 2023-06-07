@@ -463,6 +463,8 @@ Hello from Docker!
 This message shows that your installation appears to be working correctly.
 </pre>
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Running oCash Mining Pool
 ### Step1. Clone the mining pool repo.
 -----
@@ -538,6 +540,9 @@ docker compose up
 ### Step4 Test
 ------
 
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <br/>
 <br/>
 
@@ -545,7 +550,8 @@ docker compose up
 ## TLS Configurations ![recommended-shield]
 ### Testing Setup
 ------
-#### Step1. Install mkcert
+#### Step1. Installation
+
 Update package & install necessary utility:
 ```
 sudo apt update
@@ -657,15 +663,21 @@ admin@ip-xxx-xx-xx-xxx:~$
 
 3. Save changes and upload to the server then follow rest of configuration steps <a href="" >here</a> to run the mining pool
 
+> Mind that this setup is solely for `testing purposes` - you have to advise your clients to ignore certificate validation (e.g. `SSL_NOVERIFY=1` when using `ethminer`)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Production Setup
 ------
+#### Step1. Installation
 
-Install CertBot
+Install certbot:
 ```
 sudo apt-get install certbot
 ```
-Generate Key
+#### Step2. Generate Certificate & Validation
+
+Generate Key:
 ```
 sudo certbot certonly --manual --preferred-challenges dns --email <your email> --domains <your domain>
 ```
@@ -705,16 +717,30 @@ sudo openssl pkcs12 -export -out pool-cert.pfx -inkey /etc/letsencrypt/live/<you
 the PKCS12 key is in file `pool-cert.pfx` located at `/home/<username>` ex) `/home/admin`
 
 
+#### Setp3. Setup Certbot Hooks
+
+> Currently we skip this part. Will update this section shortly...
+
+
+#### Step4. Update Configuration
+
+1. Open `.env` file and updated `POOL_TLS_CERT_PATH` to the location of `pool-cert.pfx` file; `/home/admin`
+
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/e0e0e865-d614-4d7d-a7f9-e6cfb9fd7db8" width="11%"></img> 
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/4755d8d4-ac48-4c79-8109-d7a29e93f756" width="11%"></img> 
+
+2. Open `config/config.json` file
+   - Replace LinNo.92, `tls` from `false` to `true,`
+   - Replace LineNo.94, `tlsPfxPassword` from `"<fill in>"` to the password you setup above step. 
+
+> if you left password `blank` leave `tlsPfxPassword` as `""`(blank).
+
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/984d6a68-13b6-4c52-adb5-96ee95f1f86d" width="11%"></img>
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c980c52a-127d-4b78-bb2c-d36b00fc9d26" width="11%"></img> 
 
-<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/77dced4a-f177-4fb8-a1c4-07cdb5b03633" width="11%"></img> 
-<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/05d992fe-f4fe-40f0-b9a9-f03cdc995d0b" width="11%"></img> 
+3. Save changes and upload to the server then follow rest of configuration steps <a href="" >here</a> to run the mining pool
 
-
-#### Certbot Hooks
-> Currently we skip this part. Will update this section shortly...
-
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Web UI
 ### Static Site
