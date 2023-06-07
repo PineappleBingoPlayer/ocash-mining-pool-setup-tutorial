@@ -492,7 +492,7 @@ admin@ip-xxx-xx-xx-xxx:~$ cd ocash-mining-pool
 admin@ip-xxx-xx-xx-xxx:~/ocash-mining-pool$ 
 </pre>
 
-copy template configuration example files(`.env.example, `config.example.json`) to actual ones(`.env`, `config.json`):
+copy template configuration example files(`.env.example`, `config.example.json`) to actual ones(`.env`, `config.json`):
 ```
 cp .env.example .env && cp config/config.example.json config/config.json
 ```
