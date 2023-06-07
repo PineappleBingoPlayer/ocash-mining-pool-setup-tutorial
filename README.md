@@ -76,10 +76,10 @@ If you intend to set the mining pool VPS on your local device, please follow <a 
     </li>
     <li><a href="#running-ocash-mining-pool">Running oCash Mining Pool</a>
         <ul>
-           <li><a href="#step1.-clone-the-mining-pool-repo">Step1. Clone the mining pool repo.</a></li>
-           <li><a href="#Step2. Update .env/config.json">Step2. Update .env/config.json</a></li>
-           <li><a href="#Step3 Run Docker Container">Step3 Run Docker Container</a></li>
-           <li><a href="#Step4 Test">Step4 Test</a></li>
+           <li><a href="#step1-clone-the-mining-pool-repo">Step1. Clone the mining pool repo.</a></li>
+           <li><a href="#step2-update-envconfigjson">Step2. Update .env/config.json</a></li>
+           <li><a href="#step3-run-docker-container">Step3 Run Docker Container</a></li>
+           <li><a href="#step4-test">Step4 Test</a></li>
       </ul>  
     </li>
     <li><a href="#tls-configurations">TLS Configurations</a>
