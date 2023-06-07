@@ -29,7 +29,9 @@
 <a name="readme-top"></a>
 
 
+## Milestone
 
+<p align="center"></p>
 
 ## Before We Start
 
@@ -107,7 +109,7 @@ If you intend to set the mining pool VPS on your local device, please follow <a 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-<p aling="center">![preview-screenshot]</p>
+<p align="center"><img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/8e3faeb7-bf73-4e49-bbe9-e3386e9c1ba6" width="50%"></img></p>
 
 Throughout this tutorial, we are going to set up Linux VPS(Virtual Private Server) on `Amazon LightSail`, and walk through how we make secure connection to the server through `SSH` & transfer files using `SFTP` as well as basic `Linux commands` to be able to setup your oCash Mining Pool successfully. Also, for the demonstration purposes, we will host a `static website` and connect `custom domains`. 
 
