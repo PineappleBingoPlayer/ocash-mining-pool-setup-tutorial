@@ -54,14 +54,41 @@ If you intend to set the mining pool VPS on your local device, please follow <a 
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#prerequisites">Prerequisites</a>
+            <ul>
+              <li><a href="#built-with">GitHub Account</a></li>
+              <li><a href="#built-with">AWS IAM Set up</a></li>
+              <li><a href="#built-with">AWS LightSail Set Up</a></li>
+              <li><a href="#built-with">Purchase & Connect Domain</a></li>
+              <li><a href="#built-with">MobaXterm</a></li>
+            </ul>
+        </li>
+        <li><a href="#installation">Installation</a>
+             <ul>
+              <li><a href="#built-with">Utility Packages</a></li>
+              <li><a href="#built-with">Git</a></li>
+              <li><a href="#built-with">Golang</a></li>
+              <li><a href="#built-with">Go-Ethereum</a></li>
+              <li><a href="#built-with">Docker</a></li>
+            </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
+    <li><a href="#usage">Running oCash Mining Pool</a>
+        <ul>
+           <li><a href="#built-with">Step1. Clone the mining pool repo.</a></li>
+           <li><a href="#built-with">Step2. Update .env/config.json</a></li>
+           <li><a href="#built-with">Step3 Run Docker Container</a></li>
+           <li><a href="#built-with">Step4 Test</a></li>
+      </ul>  
+    </li>
+    <li><a href="#roadmap">TLS Configurations</a>
+        <ul>
+          <li><a href="#built-with">Testing Setup</a></li>
+          <li><a href="#built-with">Production Setup</a></li>
+      </ul> 
+    </li>
+    <li><a href="#contributing">Web UI</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -507,7 +534,7 @@ cp .env.example .env && cp config/config.example.json config/config.json
   - Replace `POOL_ADDRESS` with `geth account address`.
   - Replace `KEYSTORE_DIR_PATH` with `"/home/admin/.ethereum/keystore"`.
   - Replace `KEYSTORE_PASSWORD_FILE_PATH` with `"/home/admin/.ethereum/password"`.
-  - Replace `POOL_TLS_CERT_PATH` after we complete <a href="">TLS Configuration steps(Test/Production)</a> below.
+  - Replace `POOL_TLS_CERT_PATH` after we complete <a href="#TLS-Configurations">TLS Configuration steps(Test/Production)</a> below.
 
 > Type `geth account list` to check wallet address that we created from <a href="">this steps</a>.
 
