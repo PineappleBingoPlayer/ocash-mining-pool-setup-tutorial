@@ -15,7 +15,7 @@
   <p align="center">
     oCash is a crypto currency that empower oLand metaverse by <a href="https://twitter.com/overlinenetwork">@overlinenetwork</a>
     <br />
-    <!--     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a> -->
+    <!--     <a href="https://github.com/pineapplebingoplayer/ocash-mining-pool-setup-tutorial"><strong>Explore the docs »</strong></a> -->
     <br />
     <br />
     <a href="https://ocash.network" target="_blank">View Demo</a>
@@ -29,9 +29,20 @@
 <a name="readme-top"></a>
 
 
-## Milestone
+## Milestones
+:white_check_mark: Setup Linux VPS on AWS LightSail <br/>
+:white_check_mark: AWS IAM Admin Account <br/>
+:white_check_mark: Attach Static IP / Open Ports <br/>
+:white_check_mark: Github PAT/SSH <br/>
+:white_check_mark: Connect Domain <br/>
+:white_check_mark: Install Git/Go-Ethereum/Docker <br/>
+:white_check_mark: Create Geth Account/Keystore <br/>
+:white_check_mark: TLS Config for Test <br/>
+:white_check_mark: TLS Config for Prod <br/>
+:white_square_button: Setup Certbot Hooks <br/>
+:white_check_mark: Host a Static Website <br/>
+:white_check_mark: Tutorials <br/>
 
-<p align="center"></p>
 
 ## Before We Start
 
@@ -48,8 +59,10 @@ If you intend to set the mining pool VPS on your local device, please follow <a 
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#ocash-mining-pool-setup-tutorials">oCash Mining Pool Setup Tutorials</a>
       <ul>
+        <li><a href="#milestones">Milestones</a></li>
+        <li><a href="#before-we-start">Before We Start</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
@@ -161,6 +174,8 @@ This step we are going to setup VPS instance. One you login to <a href="" target
 
 > ![important-shield] Please select minimum 1GB Memeory to be able to install Go package without an issue.
 
+> 4GB ~ 8GB memories / 40GB ~ 100GB+ Storage would be preferrable in performance wise.  
+
 > For this tutorial, we will host a static website for the demonstrate purpose, so we select `Linux OS Debian v10.8` only; However, feel free to choose whichever OS you are confortable with and a blueprints for applications listed below. 
 
 
@@ -212,7 +227,7 @@ In order to provide easy accesss for miners to your mining pool, purchasing your
 
 ### MobaXterm ![recommended-shield]
 ------
-> Feel free to skip this session if you have/prefer using other softwares or using text editor and edit directly on Linux using command line.
+> Feel free to skip this session if you have/prefer using other softwares or using text editor and edit directly on Linux using command line. ex) `nano ~/.profile`
 <br/>
 
 #### What is MobaXterm?
@@ -502,6 +517,56 @@ This message shows that your installation appears to be working correctly.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Running oCash Mining Pool
+### Step0. Open Ports & Firewall.
+-----
+Install ufw:
+```
+sudo apt install ufw
+```
+Open Ports:
+```
+sudo ufw allow ssh
+sudo ufw allow 4000
+sudo ufw allow 30303
+sudo ufw allow 4073
+sudo ufw allow 80
+sudo ufw allow 8545
+sudo ufw allow 5432
+```
+Activate:
+```
+sudo ufw enable
+```
+Check Firewall Status:
+```
+sudo ufw status
+```
+Output:
+<pre>
+admin@ip-xxx-xx-x-xx:~$ sudo ufw status
+Status: active
+
+To                         Action      From
+--                         ------      ----
+22/tcp                     ALLOW       Anywhere                  
+4000                       ALLOW       Anywhere                  
+30303                      ALLOW       Anywhere                  
+4073                       ALLOW       Anywhere                  
+80                         ALLOW       Anywhere                  
+8545                       ALLOW       Anywhere                  
+5432                       ALLOW       Anywhere                  
+22/tcp (v6)                ALLOW       Anywhere (v6)             
+4000 (v6)                  ALLOW       Anywhere (v6)             
+30303 (v6)                 ALLOW       Anywhere (v6)             
+4073 (v6)                  ALLOW       Anywhere (v6)             
+80 (v6)                    ALLOW       Anywhere (v6)             
+8545 (v6)                  ALLOW       Anywhere (v6)             
+5432 (v6)                  ALLOW       Anywhere (v6)             
+
+admin@ip-xxx-xx-x-xx:~$ 
+</pre>
+
+
 ### Step1. Clone the mining pool repo.
 -----
 clone the pool git repository:
