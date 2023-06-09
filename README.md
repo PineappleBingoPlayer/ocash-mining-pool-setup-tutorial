@@ -105,8 +105,9 @@ If you intend to set the mining pool VPS on your local device, please follow <a 
       </ul> 
     </li>
     <li><a href="#contributing">Web UI</a></li>
+    <li><a href="#inconclusion">Inconclusion</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+<!--     <li><a href="#acknowledgments">Acknowledgments</a></li> -->
   </ol>
 </details>
 
@@ -640,14 +641,14 @@ cp .env.example .env && cp config/config.example.json config/config.json
 * Make sure Password file in the directory you filled in `.env`
 * Double check the permission gratned on `keystore` and `password` files.
 
-### Step3 Run Docker Container
+### Step3. Run Docker Container
 ------
 run the container(s):
 ```
 docker compose up
 ```
 
-### Step4 Test
+### Step4. Test
 ------
 
 
@@ -883,7 +884,7 @@ Step5. Reload Nginx:
 sudo systemctl reload nginx
 ```
 
-Step5. Connect to your domain with your fav. internet explore
+Step6. Connect to your domain with your fav. internet explore
 
 ex) 
 
@@ -893,30 +894,26 @@ ex)
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Inconclusion
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+We walked through how to set up oCash mining pool on AWS LightSail. We haven't touch `Certbot Hooks` and `Web UI` for dynimic website yet, but additional session will be uploaded soon. Please stay tuned.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+<center>
+  oFriends#10420 <a href="https://twitter.com/PineappleBingo_" targer="_blank">@PineappleBingo_</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
+</center>
 
 <!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
+<!-- ## Acknowledgments
 * []()
 * []()
-* []()
+* []() -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
