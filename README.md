@@ -18,7 +18,7 @@
     <!--     <a href="https://github.com/pineapplebingoplayer/ocash-mining-pool-setup-tutorial"><strong>Explore the docs »</strong></a> -->
     <br />
     <br />
-    <a href="https://ocash.network" target="_blank">View Demo</a>
+    <a href="http://ocash.network" target="_blank">View Demo</a>
     |
     <a href="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/ssues">Report Bug</a>
     |
@@ -71,11 +71,11 @@ If you intend to set the mining pool VPS on your local device, please follow <a 
       <ul>
         <li><a href="#prerequisites">Prerequisites</a>
             <ul>
-              <li><a href="#gitHub-account">GitHub Account</a></li>
-              <li><a href="#aws-iam-set-up">AWS IAM Set up</a></li>
-              <li><a href="#aws-lightsail-set-up">AWS LightSail Set Up</a></li>
-              <li><a href="#purchase-&-connect-domain">Purchase & Connect Domain</a></li>
-              <li><a href="#mobaxterm">MobaXterm</a></li>
+              <li><a href="#gitHub-account-">GitHub Account</a></li>
+              <li><a href="#aws-iam-set-up-">AWS IAM Set up</a></li>
+              <li><a href="#aws-lightsail-set-up-">AWS LightSail Set Up</a></li>
+              <li><a href="#purchase--connect-domain-">Purchase & Connect Domain</a></li>
+              <li><a href="#mobaxterm-">MobaXterm</a></li>
             </ul>
         </li>
         <li><a href="#installation">Installation</a>
@@ -91,13 +91,14 @@ If you intend to set the mining pool VPS on your local device, please follow <a 
     </li>
     <li><a href="#running-ocash-mining-pool">Running oCash Mining Pool</a>
         <ul>
+          <li><a href="#step0-open-ports--firewall">Step0. Open Ports & Firewall</a></li>
            <li><a href="#step1-clone-the-mining-pool-repo">Step1. Clone the mining pool repo.</a></li>
            <li><a href="#step2-update-envconfigjson">Step2. Update .env/config.json</a></li>
            <li><a href="#step3-run-docker-container">Step3 Run Docker Container</a></li>
            <li><a href="#step4-test">Step4 Test</a></li>
       </ul>  
     </li>
-    <li><a href="#tls-configurations">TLS Configurations</a>
+    <li><a href="#tls-configurations-">TLS Configurations</a>
         <ul>
           <li><a href="testing-setup">Testing Setup</a></li>
           <li><a href="#production-setup">Production Setup</a></li>
@@ -606,23 +607,31 @@ cp .env.example .env && cp config/config.example.json config/config.json
 * .env
   - Open `.env` file from `MobaXterm`.
   - Replace `POOL_ADDRESS` with `geth account address`.
-  - Replace `KEYSTORE_DIR_PATH` with `"/home/admin/.ethereum/keystore"`.
-  - Replace `KEYSTORE_PASSWORD_FILE_PATH` with `"/home/admin/.ethereum/password"`.
+  - Replace `KEYSTORE_DIR_PATH` with `"/home/<username>/.ethereum/keystore"`.
+  - Replace `KEYSTORE_PASSWORD_FILE_PATH` with `"/home/<username>/.ethereum/password/"`.
   - Replace `POOL_TLS_CERT_PATH` after we complete <a href="#TLS-Configurations">TLS Configuration steps(Test/Production)</a> below.
 
-> Type `geth account list` to check wallet address that we created from <a href="">this steps</a>.
+> use following commands: `cd ~/` then `sudo nano ocash-mining-pool/.env` to open directly in Linux.
+
+> Replace `<username>` with your user name logged in Linux.
+
+> Type `geth account list` to check wallet address that we created from <a href="#step2--create-geth-account">this steps</a>.
 
 > By default, Keystore file stored in `~/.ethereum/keystore` in Linux. If you updated the path, you need to specify the exact path and update on `docker-compose.yml` lineNo.67 as well.<br/>
 
-> Make sure to upload `password.txt` file that we previsouly created from <a href="">this steps</a> to `"/home/admin/.ethereum/password"` path. Otherwise, we need to specify it and update on `docker-compose.yml` lineNo.68 as well.
+> Make sure to upload `password.txt` file that we previsouly created from <a href="#step2--create-geth-account">this steps</a> to `"/home/<username>/.ethereum/password/"` path. We need to specify it and update on `docker-compose.yml` lineNo.68 as well if you choose to keep the file in other directory.
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/52e8ca05-f382-4c8d-bfc8-7b7e09552139" width="11%"></img> 
 
 * config.json
-  - Open `config.json` file located in `/home/admin/ocash-mining-pool/config/` from `MobaXterm`
+  - Open `config.json` file located in `/home/<username>/ocash-mining-pool/config/` from `MobaXterm`
   - On lineNo.72, Replace `<pool ocash address>` with `geth account address`.
   - On lineNo.76, Replace `<rewards ocash address>` with `geth account address` for now.
  
+> use following commands: `cd ~/` then `sudo nano ocash-mining-pool/config/config.json` to open directly in Linux.
+
+> Replace `<username>` with your user name logged in Linux. 
+
 > `<pool ocash address>` is the only needed one for basic setup, must match `POOL_ADDRESS` in .env
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/757a0d94-f786-40b3-909d-ed0c60f80e52" width="11%"></img> 
@@ -748,14 +757,18 @@ admin@ip-xxx-xx-xx-xxx:~$
 
 #### Step3. Update Configuration
 
-1. Open `.env` file and updated `POOL_TLS_CERT_PATH` to the location of `pool-cert.pfx` file; `/home/admin`
+1. Open `.env` file and updated `POOL_TLS_CERT_PATH` to the location of `pool-cert.pfx` file; `/home/<username>`
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/e0e0e865-d614-4d7d-a7f9-e6cfb9fd7db8" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/4755d8d4-ac48-4c79-8109-d7a29e93f756" width="11%"></img> 
 
+> use following commands: `cd ~/` then `sudo nano ocash-mining-pool/.env` to open directly in Linux.
+
 2. Open `config/config.json` file
    - Replace LinNo.92, `tls` from `false` to `true,`
    - Replace LineNo.94, `tlsPfxPassword` from `"<fill in>"` to the password you setup above step. 
+
+> use following commands: `cd ~/` then `sudo nano ocash-mining-pool/config/config.json` to open directly in Linux.
 
 > if you left password `blank` leave `tlsPfxPassword` as `""`(blank).
 
@@ -825,14 +838,18 @@ the PKCS12 key is in file `pool-cert.pfx` located at `/home/<username>` ex) `/ho
 
 #### Step4. Update Configuration
 
-1. Open `.env` file and updated `POOL_TLS_CERT_PATH` to the location of `pool-cert.pfx` file; `/home/admin`
+1. Open `.env` file and updated `POOL_TLS_CERT_PATH` to the location of `pool-cert.pfx` file; `/home/<username>`
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/e0e0e865-d614-4d7d-a7f9-e6cfb9fd7db8" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/4755d8d4-ac48-4c79-8109-d7a29e93f756" width="11%"></img> 
 
+> use following commands: `cd ~/` then `sudo nano ocash-mining-pool/.env` to open directly in Linux.
+
 2. Open `config/config.json` file
    - Replace LinNo.92, `tls` from `false` to `true,`
    - Replace LineNo.94, `tlsPfxPassword` from `"<fill in>"` to the password you setup above step. 
+
+> use following commands: `cd ~/` then `sudo nano ocash-mining-pool/config/config.json` to open directly in Linux.
 
 > if you left password `blank` leave `tlsPfxPassword` as `""`(blank).
 
@@ -843,18 +860,32 @@ the PKCS12 key is in file `pool-cert.pfx` located at `/home/<username>` ex) `/ho
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Web UI
+## Hosting
 ### Static Site
 Step1. Install `Ngnix` Web Server
 ```
-
+sudo apt install nginx
 ```
 Step2. Give a read/write `permission` to current user
 ```
-
+sudo chown -R USER /var/www/html/
 ```
-Step3. Upload `index.html` file to `/home/<user>/www/`
+Step3. Enable a website on Ngnix:
+```
+sudo nano /etc/nginx/sites-available/default
+```
+Step3. Download `index.html`file from the repo Repo(or any other static template file)
 
+Step4. Upload `index.html` file to `/home/<user>/www/`
+
+Step5. Reload Nginx:
+```
+sudo systemctl reload nginx
+```
+
+Step5. Connect to your domain with your fav. internet explore
+ex) 
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/8e3faeb7-bf73-4e49-bbe9-e3386e9c1ba6" width="25%"></img>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
