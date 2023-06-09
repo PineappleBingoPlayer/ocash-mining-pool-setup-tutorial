@@ -860,7 +860,7 @@ the PKCS12 key is in file `pool-cert.pfx` located at `/home/<username>` ex) `/ho
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Hosting
+## Web UI
 ### Static Site
 Step1. Install `Ngnix` Web Server
 ```
@@ -884,7 +884,9 @@ sudo systemctl reload nginx
 ```
 
 Step5. Connect to your domain with your fav. internet explore
+
 ex) 
+
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/8e3faeb7-bf73-4e49-bbe9-e3386e9c1ba6" width="25%"></img>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
