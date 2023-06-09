@@ -169,13 +169,15 @@ This step we are going to setup VPS instance. One you login to <a href="" target
 2. Attach Static IP
 3. Open Ports
 
+> Make sure to check `port 22` and `port 80`is opened.
+
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/329df9da-04f3-4d84-bbf0-ca1ac5c89997" width="11%"></img>
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/f5dec8be-a60e-4d03-9b6f-e428cc180a2e" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/13dd2fec-9ea7-4d68-827f-c77e4d450594" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/9cd7ffeb-73f5-4147-a1d9-e5284aae8250" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/7fe74ab7-d06e-43d7-80a5-943a0127602b" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/72ac728a-cf5e-4a13-a21f-aa538a140521" width="11%"></img>
-<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/4bbfa80b-41a8-4558-abe2-ce3839bb18cc" width="11%"></img> 
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c33f33ca-b753-4f9e-b91b-ab2f6ba6d2e2" width="11%"></img> 
 
 
 ### Purchase & Connect Domain ![required-shield]
@@ -210,7 +212,7 @@ In order to provide easy accesss for miners to your mining pool, purchasing your
 
 ### MobaXterm ![recommended-shield]
 ------
-> Feel free to skip this secection if you have/prefer using other softwares for `SSH` connection and `STFP` file transfer.
+> Feel free to skip this session if you have/prefer using other softwares or using text editor and edit directly on Linux using command line.
 <br/>
 
 #### What is MobaXterm?
@@ -341,6 +343,8 @@ admin@ip-xxx-xx-xx-xx:~$
 
 ### 4. Go-Ethereum
 ------
+> You could install `core-geth` instead, but make sure to install verion `v.1.11.5`
+
 #### Step1. Installation
 We are going to install go-ethereum from git repository. Check <a hfef="https://geth.ethereum.org/docs/getting-started/installing-geth" target="_blank">here</a> to find out more options.
 
@@ -410,7 +414,7 @@ Once geth account created, the account is stored in following path by geth in fi
 6. Download `geth account file` as a backup and place in a secure place
 
 > Keystore Path: `/home/admin/.ethereum/keystore` <br/>
-Password.txt Path: `/home/admin/.ethereum/password/password.txt`
+Password file Path: `/home/admin/.ethereum/password`
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/0100af46-2c37-402f-9f95-1ff3b4a590b4" width="11%"></img>
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/af2ab9b1-6a8f-4ab8-909c-9247d7590012" width="11%"></img>
