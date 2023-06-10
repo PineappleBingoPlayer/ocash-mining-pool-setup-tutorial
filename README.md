@@ -655,6 +655,7 @@ run the container(s):
 docker compose up
 ```
 
+
 ### Step4. Test
 ------
 User your mining software to verify the pool is working.
@@ -662,8 +663,9 @@ User your mining software to verify the pool is working.
 > Assign your mining pool address with opened port <your_domain>:4073 `ex) ocash.network:4073` to the mining software.
 
 Result:
+<center>
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/cd5237d1-7a7e-48ec-ba94-a547649c42b0" width="25%"></img> 
-
+</center>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <br/>
