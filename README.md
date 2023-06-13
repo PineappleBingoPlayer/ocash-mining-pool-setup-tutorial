@@ -418,7 +418,7 @@ $ geth account new
 Your new account is locked with a password. Please give a password. Do not forget this password.
 Passphrase:
 Repeat passphrase: 
-Address: {168bc315a2ee09042d83d7c5811b533620531f67}
+Address: {60a9e77d10e6b020c9afbdb9ba047913d3697dc2}
 </pre>
 
 > System will require a password for your geth account. Type password or create one <a href="https://www.lastpass.com/features/password-generator" target="_blank">here</a> 
@@ -612,7 +612,7 @@ cp .env.example .env && cp config/config.example.json config/config.json
 -----
 
 * .env
-  - Open `.env` file from `MobaXterm`.
+  - Open `.env` file from `MobaXterm` (or in Linux).
   - Replace `POOL_ADDRESS` with `geth account address`.
   - Replace `KEYSTORE_DIR_PATH` with `"/home/<username>/.ethereum/keystore"`.
   - Replace `KEYSTORE_PASSWORD_FILE_PATH` with `"/home/<username>/.ethereum/password/"`.
@@ -622,22 +622,32 @@ cp .env.example .env && cp config/config.example.json config/config.json
 
 > Replace `<username>` with your user name logged in Linux.
 
-> Type `geth account list` to check wallet address that we created from <a href="#step2--create-geth-account">this steps</a>.
+> Type `geth account list` to check wallet's pulbic address that we created from <a href="#step2-create-geth-account">this steps</a>.
 
-> By default, Keystore file stored in `~/.ethereum/keystore` in Linux. If you updated the path, you need to specify the exact path and update on `docker-compose.yml` lineNo.67 as well.<br/>
+> Note that you should append `0x` in the front of the `get account address` to make it in Hexdecimal. Then, replace it with `POOL_ADDRESS` ex) `0x60a9e77d10e6b020c9afbdb9ba047913d3697dc2` 
 
-> Make sure to upload `password.txt` file that we previsouly created from <a href="#step2--create-geth-account">this steps</a> to `"/home/<username>/.ethereum/password/"` path. We need to specify it and update on `docker-compose.yml` lineNo.68 as well if you choose to keep the file in other directory.
+> By default, Keystore file stored in `~/.ethereum/keystore` in Linux. 
+
+<!-- > If you updated the path, you need to specify the exact path and update on `docker-compose.yml` lineNo.67 as well.<br/> -->
+
+> Make sure to upload `password.txt` file that we previsouly created from <a href="#step2-create-geth-account">this steps</a> to `"/home/<username>/.ethereum/password"` directory. 
+
+<!-- > We need to specify it and update on `docker-compose.yml` lineNo.68 as well if you choose to keep the file in other directory. -->
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c4e104ea-bccc-4f4d-bf6e-fec2818e139d" width="11%"></img> 
 
 * config.json
-  - Open `config.json` file located in `/home/<username>/ocash-mining-pool/config/` from `MobaXterm`
+  - Open `config.json` file located in `/home/<username>/ocash-mining-pool/config/` from `MobaXterm` (or in Linux)
   - On lineNo.72, Replace `<pool ocash address>` with `geth account address`.
-  - On lineNo.76, Replace `<rewards ocash address>` with `geth account address` for now.
+  - On lineNo.76, Replace `<rewards ocash address>` with `geth account address`.
  
 > use following commands: `cd ~/` then `sudo nano ocash-mining-pool/config/config.json` to open `config.json` file directly in Linux.
 
 > Replace `<username>` with your user name logged in Linux. 
+
+> Note that you should append `0x` in the front of the `get account address` to make it in Hexdecimal. Then, replace it with `<pool ocash address>` and `<rewards ocash address>` ex) `0x60a9e77d10e6b020c9afbdb9ba047913d3697dc2`
+
+> In this tutorial, we set the `pool ocash address` and `rewards ocash address` as the same. Feel free to separate wallets as you wish.
 
 > `<pool ocash address>` is the only needed one for basic setup, must match `POOL_ADDRESS` in .env
 
@@ -650,10 +660,20 @@ cp .env.example .env && cp config/config.example.json config/config.json
 
 ### Step3. Run Docker Container
 ------
+Change directory to home:
+```
+cd ~/
+```
+Change directory to ocash-mining-pool:
+```
+cd ocash-mining-pool
+```
 run the container(s):
 ```
 docker compose up
 ```
+
+Finally, your oCash mining pool will run.
 
 
 ### Step4. Test
@@ -673,6 +693,9 @@ Result:
 
 
 ## TLS Configurations ![recommended-shield]
+
+> TLS Configuration is hightly recommended for security issues. It would be better to test run without TLS setup first, then continue to finish following steps.
+
 ### Testing Setup
 ------
 #### Step1. Installation
@@ -790,7 +813,7 @@ admin@ip-xxx-xx-xx-xxx:~$
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/984d6a68-13b6-4c52-adb5-96ee95f1f86d" width="11%"></img>
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c980c52a-127d-4b78-bb2c-d36b00fc9d26" width="11%"></img> 
 
-3. Save changes and upload to the server then follow rest of configuration steps <a href="" >here</a> to run the mining pool
+3. Save changes then follow rest of configuration steps <a href="#step2-update-envconfigjson">here</a> then following rest of the steps to run the mining pool
 
 > Mind that this setup is solely for `testing purposes` - you have to advise your clients to ignore certificate validation (e.g. `SSL_NOVERIFY=1` when using `ethminer`)
 
@@ -871,7 +894,7 @@ the PKCS12 key is in file `pool-cert.pfx` located at `/home/<username>` ex) `/ho
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/984d6a68-13b6-4c52-adb5-96ee95f1f86d" width="11%"></img>
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c980c52a-127d-4b78-bb2c-d36b00fc9d26" width="11%"></img> 
 
-3. Save changes and upload to the server then follow rest of configuration steps <a href="" >here</a> to run the mining pool
+3. Save changes then follow rest of configuration steps <a href="#step2-update-envconfigjson">here</a> then following rest of the steps to run the mining pool
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -891,7 +914,7 @@ sudo nano /etc/nginx/sites-available/default
 ```
 Step3. Download `index.html`file from the repo Repo(or any other static template file)
 
-Step4. Upload `index.html` file to `/home/<user>/www/`
+Step4. Upload `index.html` file to `/home/<username>/www/`
 
 Step5. Reload Nginx:
 ```
