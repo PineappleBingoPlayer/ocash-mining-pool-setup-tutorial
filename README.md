@@ -915,7 +915,7 @@ sudo nano /etc/nginx/sites-available/default
 ```
 Step3. Download `index.html`file from the repo Repo(or any other static template file)
 
-Step4. Upload `index.html` file to `/home/<username>/www/`
+Step4. Upload `index.html` file to `/var/www/html/`
 
 Step5. Reload Nginx:
 ```
