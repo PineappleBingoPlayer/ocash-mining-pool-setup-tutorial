@@ -634,7 +634,7 @@ cp .env.example .env && cp config/config.example.json config/config.json
 
 <!-- > We need to specify it and update on `docker-compose.yml` lineNo.68 as well if you choose to keep the file in other directory. -->
 
-<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c4e104ea-bccc-4f4d-bf6e-fec2818e139d" width="11%"></img> 
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/6c015a06-e04a-42d3-a4e1-6ca09eb2e470" width="11%"></img> 
 
 * config.json
   - Open `config.json` file located in `/home/<username>/ocash-mining-pool/config/` from `MobaXterm` (or in Linux)
@@ -651,7 +651,7 @@ cp .env.example .env && cp config/config.example.json config/config.json
 
 > `<pool ocash address>` is the only needed one for basic setup, must match `POOL_ADDRESS` in .env
 
-<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/757a0d94-f786-40b3-909d-ed0c60f80e52" width="11%"></img> 
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c360431b-dc88-49a6-b306-f82f80f9ce48" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/10c22834-c796-4832-aa33-ec5419e40efa" width="11%"></img> 
 
 * Make sure Keystore file in the directory you filled in `.env`
@@ -798,7 +798,7 @@ admin@ip-xxx-xx-xx-xxx:~$
 1. Open `.env` file and updated `POOL_TLS_CERT_PATH` to the location of `pool-cert.pfx` file; `/home/<username>`
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/e0e0e865-d614-4d7d-a7f9-e6cfb9fd7db8" width="11%"></img> 
-<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/4755d8d4-ac48-4c79-8109-d7a29e93f756" width="11%"></img> 
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/b79ff68e-ee35-4e71-b591-b959cfb80768" width="11%"></img> 
 
 > use following commands: `cd ~/` then `sudo nano ocash-mining-pool/.env` to open directly in Linux.
 
@@ -810,8 +810,8 @@ admin@ip-xxx-xx-xx-xxx:~$
 
 > if you left password `blank` leave `tlsPfxPassword` as `""`(blank).
 
-<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/984d6a68-13b6-4c52-adb5-96ee95f1f86d" width="11%"></img>
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c980c52a-127d-4b78-bb2c-d36b00fc9d26" width="11%"></img> 
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/984d6a68-13b6-4c52-adb5-96ee95f1f86d" width="11%"></img>
 
 3. Save changes then follow rest of configuration steps <a href="#step2-update-envconfigjson">here</a> then following rest of the steps to run the mining pool
 
@@ -879,7 +879,7 @@ the PKCS12 key is in file `pool-cert.pfx` located at `/home/<username>` ex) `/ho
 1. Open `.env` file and updated `POOL_TLS_CERT_PATH` to the location of `pool-cert.pfx` file; `/home/<username>`
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/e0e0e865-d614-4d7d-a7f9-e6cfb9fd7db8" width="11%"></img> 
-<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/4755d8d4-ac48-4c79-8109-d7a29e93f756" width="11%"></img> 
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/b79ff68e-ee35-4e71-b591-b959cfb80768" width="11%"></img> 
 
 > use following commands: `cd ~/` then `sudo nano ocash-mining-pool/.env` to open directly in Linux.
 
@@ -891,8 +891,9 @@ the PKCS12 key is in file `pool-cert.pfx` located at `/home/<username>` ex) `/ho
 
 > if you left password `blank` leave `tlsPfxPassword` as `""`(blank).
 
+<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c980c52a-127d-4b78-bb2c-d36b00fc9d26" width="11%"></img>
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/984d6a68-13b6-4c52-adb5-96ee95f1f86d" width="11%"></img>
-<img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c980c52a-127d-4b78-bb2c-d36b00fc9d26" width="11%"></img> 
+
 
 3. Save changes then follow rest of configuration steps <a href="#step2-update-envconfigjson">here</a> then following rest of the steps to run the mining pool
 
