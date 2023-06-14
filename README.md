@@ -8,6 +8,7 @@
 <div align="center">
   <a href="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial">
     <img src="images/10420-removebg.png" alt="Logo" width="200" height="200">
+<!--     <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/d8568d36-e34f-463c-b47c-91451119f9e8" width="25%"></img>  -->
   </a>
   <h5>oFriends#10420</h5>
   <h2 align="center">oCash Mining Pool Setup Tutorials</h2>
@@ -934,18 +935,18 @@ ex)
 <!-- USAGE EXAMPLES -->
 ## Inconclusion
 
-We walked through how to set up oCash mining pool on AWS LightSail. We haven't touch `Certbot Hooks` and `Web UI` for dynimic website yet, but additional session will be uploaded soon. Please stay tuned.
+We walked through how to set up oCash mining pool on AWS LightSail VPS. We haven't touched `Certbot Hooks` for TLS production configuration and `Web UI` for dynimic website yet, but at least, we leaned how to setup our own mining pool and tested that our mining pool is up and running. We will continue to develop our mining pool by setting up TLS configuration and install a dynamic webUI later. Stay Tuned!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTACT -->
-## Contact
+<!-- ## Contact
 
-<center>
+<div align="center">
+  <img src="images/10420-removebg.png" alt="Logo" width="200" height="200">
   oFriends#10420 <a href="https://twitter.com/PineappleBingo_" targer="_blank">@PineappleBingo_</a>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-</center>
+</div>
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 <!-- ACKNOWLEDGMENTS -->
 <!-- ## Acknowledgments
