@@ -155,7 +155,7 @@ Step2. Create `Personal Access Token`:
 
 ### AWS IAM Set up ![recommended-shield]
 ------
-Before we are setting up VPS instance,  Sign up AWS account(`root user`) <a href="" target="_blank">here</a> if you don't have one yet. Then we are going to set up `IAM user` instead of using `root user`.
+Before we are setting up VPS instance,  Sign up AWS account(`root user`) <a href="https://aws.amazon.com/" target="_blank">here</a> if you don't have one yet. Then we are going to set up `IAM user` instead of using `root user`.
 
 1. Login in as `Root User` with your Email address
 2. Search IAM in the search bar and click `users' on the left sidebar.
@@ -204,7 +204,7 @@ This step we are going to setup VPS instance. One you login to <a href="" target
 ------
 In order to provide easy accesss for miners to your mining pool, purchasing your own domain is recomened.
 1. Purchase your domain name
-> There are many domain registration service providers. Pick any of providers here and create your own unique, eye-catching, and easy-to-remmeber domain name. ex)<a href="https://ocash.network" target="_blank">`ocash.network`</a>
+> There are many domain registration service providers. Pick any of providers here and create your own unique, eye-catching, and easy-to-remmeber domain name. ex)<a href="http://ocash.network" target="_blank">`ocash.network`</a>
 > For this tutorial, we use <a href="http://domains.google/" target="_blank">Google Domains</a>
       
    - Login your Google account
@@ -624,7 +624,7 @@ cp .env.example .env && cp config/config.example.json config/config.json
 
 > Type `geth account list` to check wallet's pulbic address that we created from <a href="#step2-create-geth-account">this steps</a>.
 
-> Note that you should append `0x` in the front of the `get account address` to make it in Hexdecimal. Then, replace it with `POOL_ADDRESS` ex) `0x60a9e77d10e6b020c9afbdb9ba047913d3697dc2` 
+> ![important-shield] Note that you should append `0x` in the front of the `geth account address` to make it in Hexdecimal. Then, replace it with `POOL_ADDRESS` ex) `0x60a9e77d10e6b020c9afbdb9ba047913d3697dc2` 
 
 > By default, Keystore file stored in `~/.ethereum/keystore` in Linux. 
 
@@ -645,7 +645,7 @@ cp .env.example .env && cp config/config.example.json config/config.json
 
 > Replace `<username>` with your user name logged in Linux. 
 
-> Note that you should append `0x` in the front of the `get account address` to make it in Hexdecimal. Then, replace it with `<pool ocash address>` and `<rewards ocash address>` ex) `0x60a9e77d10e6b020c9afbdb9ba047913d3697dc2`
+> ![important-shield] Note that you should append `0x` in the front of the `get account address` to make it in Hexdecimal. Then, replace it with `<pool ocash address>` and `<rewards ocash address>` ex) `0x60a9e77d10e6b020c9afbdb9ba047913d3697dc2`
 
 > In this tutorial, we set the `pool ocash address` and `rewards ocash address` as the same. Feel free to separate wallets as you wish.
 
