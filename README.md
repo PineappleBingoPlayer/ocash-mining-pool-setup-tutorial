@@ -38,7 +38,7 @@
 :white_check_mark: Install Git/Go-Ethereum/Docker <br/>
 :white_check_mark: Create Geth Account/Keystore <br/>
 :white_check_mark: TLS Config for Test <br/>
-:white_check_mark: TLS Config for Prod <br/>
+:white_square_button: TLS Config for Prod <br/>
 :white_square_button: Setup Certbot Hooks <br/>
 :white_check_mark: Host a Static Website <br/>
 :white_check_mark: Tutorials <br/>
