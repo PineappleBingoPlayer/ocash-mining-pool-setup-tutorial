@@ -47,11 +47,11 @@
 
 ## Before We Start
 
-This tutorial is for setting up a `cloud based oCash Mining Pool` over AWS LightSail VPS instance.
+This tutorial is for setting up a `cloud-based oCash Mining Pool` over the AWS LightSail VPS instance.
 If you intend to set the mining pool VPS on your local device, please follow <a href="https://medium.com/@uanid/how-to-install-ocash-mining-pool-full-version-2a5ebf587d35" target="_blank">this</a> tutorial provided by @uanid
 <br/>
 > This tutorial is derivative version of <a href="https://github.com/overliner/ocash-mining-pool" target="_blank">ōCash Mining Pool by @overlinenetwork </a>.
-> We will walk through the steps as simple as possible for those of whom are new to the mining world including myself. Please report any bugs, or comments along with instruction steps. Your valued feedbacks will help #oland Community. 
+> We will walk through the steps as simply as possible for those who are new to the mining world including myself. Please report any bugs or comments along with instructions. Your valued feedback will help #oland Community. 
 
 
 ## Table of Contents
@@ -105,10 +105,8 @@ If you intend to set the mining pool VPS on your local device, please follow <a 
           <li><a href="#production-setup">Production Setup</a></li>
       </ul> 
     </li>
-    <li><a href="#contributing">Web UI</a></li>
+    <li><a href="#web-ui">Web UI</a></li>
     <li><a href="#inconclusion">Inconclusion</a></li>
-    <li><a href="#contact">Contact</a></li>
-<!--     <li><a href="#acknowledgments">Acknowledgments</a></li> -->
   </ol>
 </details>
 
@@ -128,16 +126,14 @@ If you intend to set the mining pool VPS on your local device, please follow <a 
 
 
 
-Throughout this tutorial, we are going to set up Linux VPS(Virtual Private Server) on `Amazon LightSail`, and walk through how we make secure connection to the server through `SSH` & transfer files using `SFTP` as well as basic `Linux commands` to be able to setup your oCash Mining Pool successfully. Also, for the demonstration purposes, we will host a `static website` and connect `custom domains`. 
+Throughout this tutorial, we are going to set up Linux VPS(Virtual Private Server) on `Amazon LightSail`, and walk through how we make secure connection to the server through `SSH` & transfer files using `SFTP` as well as basic `Linux commands` to be able to set up your oCash Mining Pool successfully. Also, for demonstration purposes, we will host a `static website` and connect `custom domains`. 
 
 > Feel free to explore other VPS providers, and choose whichever provider is suitable for your budget, UI, or your own preference. There are 100's of providers available. Check <a href="https://www.google.com/search?q=vps+provider+list&sxsrf=APwXEde1H7TPezGQCqAOomKFr6natjwx0w%3A1685476325270&source=hp&ei=5VN2ZM_bDLTg0PEP0tqzmAo&iflsig=AOEireoAAAAAZHZh9b0zuxO7LNaFgpSCOnqRyCT8pGRg&ved=0ahUKEwiP4pDN6J3_AhU0MDQIHVLtDKMQ4dUDCAs&uact=5&oq=vps+provider+list&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgYIABAWEB4yCAgAEIoFEIYDMggIABCKBRCGAzIICAAQigUQhgMyCAgAEIoFEIYDOgQIIxAnOhMILhCKBRCxAxCDARDHARDRAxBDOgcIABCKBRBDOg0ILhCKBRDHARDRAxBDOhEILhCABBCxAxCDARDHARDRAzoUCC4QgAQQsQMQgwEQxwEQ0QMQ1AI6DgguEIMBENQCELEDEIoFOggIABCKBRCRAjoICAAQgAQQsQM6CwguEIAEELEDEIMBOgsILhCDARCxAxCABDoLCAAQgAQQsQMQgwE6CwguEIAEELEDENQCOgUILhCABDoQCC4QigUQsQMQxwEQ0QMQQzoLCAAQigUQsQMQgwE6BwgjEOoCECc6DQguEIoFEMcBEK8BECc6BwgjEIoFECc6CwguEIMBELEDEIoFOgsILhCABBDHARDRAzoKCAAQigUQsQMQQzoNCAAQigUQsQMQgwEQQzoRCC4QgAQQsQMQgwEQxwEQrwE6BAgAEAM6CwguEIoFELEDEIMBOgsILhCABBDHARCvAToICAAQFhAeEA9QAFi3OGDXOWgJcAB4AYABygSIAe8VkgEIMjAuNS41LTGYAQCgAQGwAQo&sclient=gws-wiz" target="_blank">Google's serached "VPS Provider List" results</a>, and many of them provides promotions such as $100-$300 credit, 3 month free trial, etc. I choose AWS LightSail since I'm familiar with other AWS Services, and it has 3 month free tiral promos.  
 
 ## Prerequisites
    - Basic Linux commands ex) cd, ls, /root, ~/, etc. (More info. can be found <a href="https://maker.pro/linux/tutorial/basic-linux-commands-for-beginners" target="_blank"> here </a>)
 
-> Feel free to skip over any of following setps if you already completed.
-
-> ![recommended-shield] is not required step. You can skip and follow along with ![required-shield] steps
+> Please Feel free to skip over any of the following prerequisites if you already completed them.
 
 ### GitHub Account ![required-shield]
 ------
@@ -156,33 +152,33 @@ Step2. Create `Personal Access Token`:
 
 ### AWS IAM Set up ![recommended-shield]
 ------
-Before we are setting up VPS instance,  Sign up AWS account(`root user`) <a href="https://aws.amazon.com/" target="_blank">here</a> if you don't have one yet. Then we are going to set up `IAM user` instead of using `root user`.
+Before we are setting up the VPS instance,  Sign up AWS account(`root user`) <a href="https://aws.amazon.com/" target="_blank">here</a> if you don't have one yet. Then we will set up `IAM user` instead of `root user`.
 
 1. Login in as `Root User` with your Email address
 2. Search IAM in the search bar and click `users' on the left sidebar.
 3. Click on `Add Users`, Then Type `User name` and `Password`
 4. Select `Add user to group`, then click `Create group`
-5. Give a `User group name`, serach & select "AdministratorAccess". Then create user group
+5. Give a `User group name`, search & select "AdministratorAccess". Then create user group
 6. Review and click `Create user`
-7. Return to users list then copy down 12 digits `Account ID`
-8. Logout and Login back using `Account ID` `IAM user` `password` that we just created
+7. Return to the users list then copy down 12 digits `Account ID`
+8. Logout and Login back in using the `Account ID` `IAM user` `password` that we just created
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/9dfa7c8c-eac7-4c6c-96b2-f11faa9c1bd5" width="11%"></img> <img 
 src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/73449a82-748f-4021-85b3-f0729551aad6" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/cf6c9853-7381-462d-bb1d-6a1ec558ee29" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/7747371b-5f07-484e-8af4-c3018a93e308" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/bc8df107-02de-4dd1-a096-f85cd88fafbf" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/06e2efea-f076-4a88-abf7-e35385ae4378" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/712c7062-5425-4f3c-ab68-d3f03b31262e" width="11%"></img> <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/72080b6e-4b35-4051-99f2-241c121d0306" width="11%"></img> 
 
 ### AWS LightSail Set Up ![required-shield]
 ------
-This step we are going to setup VPS instance. One you login to <a href="" target="_blank">AWS Console </a> you can simply type `LightSail' on the searchbar or Find the link <a href="" target="_blank">here</a>
-1. Create Instance
+In this step, we are going to set up a VPS instance. Once you login to <a href="" target="_blank">AWS Console </a> you can simply type `LightSail' on the search bar or Find the link <a href="" target="_blank">here</a>
+1. Create an Instance
    - Select Instance Location
    - Select a Platform(Linux / Windows)
-   - Select a bluprint
+   - Select a blueprint
 
-> ![important-shield] Please select minimum 1GB Memeory to be able to install Go package without an issue.
+> ![important-shield] Please select a minimum of 1GB of memory to be able to install the Go package without an issue.
 
 > 4GB ~ 8GB memories / 40GB ~ 100GB+ Storage would be preferrable in performance wise.  
 
-> For this tutorial, we will host a static website for the demonstrate purpose, so we select `Linux OS Debian v10.8` only; However, feel free to choose whichever OS you are confortable with and a blueprints for applications listed below. 
+> For this tutorial, we will host a static website for the demonstration purpose, so we select `Linux OS Debian v10.8` only; However, feel free to choose whichever OS you are confortable with and a blueprint for applications listed below. 
 
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/f6de655d-d20d-4682-8526-88f38529e37d" width="11%"></img> 
@@ -203,14 +199,14 @@ This step we are going to setup VPS instance. One you login to <a href="" target
 
 ### Purchase & Connect Domain ![required-shield]
 ------
-In order to provide easy accesss for miners to your mining pool, purchasing your own domain is recomened.
+In order to provide easy access for miners to your mining pool, purchasing your own domain is recommended.
 1. Purchase your domain name
-> There are many domain registration service providers. Pick any of providers here and create your own unique, eye-catching, and easy-to-remmeber domain name. ex)<a href="http://ocash.network" target="_blank">`ocash.network`</a>
+> There are many domain registration service providers. Pick any of the providers here and create your own unique, eye-catching, and easy-to-remember domain name. ex)<a href="http://ocash.network" target="_blank">`ocash.network`</a>
 > For this tutorial, we use <a href="http://domains.google/" target="_blank">Google Domains</a>
       
-   - Login your Google account
-   - Search domain name that you wish for
-   - Select alternates if it's already exit
+   - Login to your Google account
+   - Search the domain name that you wish for
+   - Select alternates if it's already exist
    - Make a purchase
 
 2. Connect your domain
@@ -220,9 +216,9 @@ In order to provide easy accesss for miners to your mining pool, purchasing your
    - Add custom record, `Host name` as ""(Empty) `Type` as "A" then, `Data` as  `your VPS Public IP address(Static IP)`
    - Add custom record, `Host name` as "WWW" `Type` as "A" then, `Data` as  `your VPS Public IP address(Static IP)`
 
-  > When its succeessfully updated custom record, it will take 1-3 mins to reflect changes.
+  > When it's successfully updated custom record, it will take 1-3 mins to reflect changes.
   
-  > FYI, once you type your domain in the web browser, <u>the page won't be displayed since we haven't set up `web server` yet</u>
+  > FYI, once you type your domain in the web browser, <u>the page won't be displayed since we haven't set up a `web server` yet</u>
   
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/5129c17b-285e-44f7-a537-5b49ce91f32f" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/bdbed861-f7f7-4bbc-a65d-7d7619b168da" width="11%"></img> 
@@ -233,16 +229,16 @@ In order to provide easy accesss for miners to your mining pool, purchasing your
 
 ### MobaXterm ![recommended-shield]
 ------
-> MobaXterm would be recomended for user who is not familiar with Linux commands line prompt, and it will provide Windows like GUI.
+> MobaXterm would be recommended for a user who is not familiar with Linux commands line prompt, and it will provide Windows-like GUI.
 
-> Feel free to skip this session if you have/prefer using other softwares or using text editor and edit directly in Linux. ex) `nano ~/.profile`
+> Feel free to skip this session if you have/prefer using other software or using a text editor and editing directly in Linux. ex) `nano ~/.profile`
  
 <br/>
 
 #### What is MobaXterm?
 MobaXterm is a software toolbox for a secure connection to remote server / remote computing.
 - We will focus on `SSH Connection` and `SFTP`(Secured File Transfer Protocol)
-  - `SSH Connection` : Make direct connection to remote server using SSH without opening LightSail Dashboard.
+  - `SSH Connection`: Make a direct connection to a remote server using SSH without opening LightSail Dashboard.
   - `STFP`: Transfer files between AWS LightSail VPS and local machine(Windows/Mac.
 
 #### Before We make Connections
@@ -258,7 +254,7 @@ MobaXterm is a software toolbox for a secure connection to remote server / remot
 1. Open MobaXterm & Click `Session`
 2. Fill out `Remote host` as your server's `Public IP address`, `Specify username` as your `IAM User`, then select `Port 22`
 3. Click `SSH` then, Select `Advanced SSH settings`
-5. Check `Use private key`, then select `SSH key(.pem)` file downloaded from AWS Instance Dashboard
+5. Check `Use private key`, then select the `SSH key(.pem)` file downloaded from AWS Instance Dashboard
 6. Click `Ok`
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/0fc469b2-4e6f-4fb2-9dad-e260183a25c6" width="11%"></img> 
@@ -269,14 +265,14 @@ MobaXterm is a software toolbox for a secure connection to remote server / remot
 1. Open MobaXterm & Click `Session`
 2. Fill out `Remote host` as your server's `Public IP address`, `Specify username` as your `IAM User`, then select `Port 22`
 3. Click `SFTP` then, Select `Advanced Sftp settings`
-4. Check `Use private key`, then select `SSH key(.pem)` file downloaded from AWS Instance Dashboard
+4. Check `Use private key`, then select the `SSH key(.pem)` file downloaded from AWS Instance Dashboard
 6. Click `Ok`
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/0fc469b2-4e6f-4fb2-9dad-e260183a25c6" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/6c10ae09-65eb-401a-8af3-3eb8f1918eb3" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/93143527-d0e1-48ac-93bc-266c17505042" width="11%"></img> 
 
-> After we make a serue connection to the server, we can easily transfer files between local computer and cloud Server by simply drag & drop. Also, we can select and open files from server panel, then It will open up a text editor to edit & save to the cloud server directly. It will make easier for us to update `.env` and `config.json`file for the configuration which we will walk through later in this tutorial. 
+> After we make a secure connection to the server, we can easily transfer files between a local computer and the cloud Server by simply drag & drop. Also, we can select and open files from the server panel, then It will open up a text editor to edit & save to the cloud server directly. It will make it easier for us to update the `.env` and `config.json`file for the configuration which we will walk through later in this tutorial. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -310,7 +306,7 @@ Install Go 1.20.4:
 ```
 sudo wget https://golang.org/dl/go1.20.4.linux-amd64.tar.gz
 ```
-Verify downloaded tarball version with the SHA256:
+Verify the downloaded tarball version with the SHA256:
 ```
 sha256sum go1.20.4.linux-amd64.tar.gz
 ```
@@ -323,11 +319,11 @@ Change the owner and group of this directory to root recursively:
 sudo chown -R root:root /usr/local/go
 ```
 Part2:Configuration
-Make new directory for Go:
+Make a new directory for Go:
 ```
 mkdir -p $HOME/go/{bin,src}
 ```
-Adding Global variables $GOPATH, Path and `ctrl+x` to close and save changes:
+Adding Global variables $GOPATH, Path, and `ctrl+x` to close and save changes:
 ```
 nano ~/.profile
 ```
@@ -339,7 +335,7 @@ export PATH=$PATH:$GOPATH/bin:/usr/local/go/bin
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/2f397257-04e1-4105-98b3-9b998ffb09e7" width="18%"></img> 
 
-Reload environmental variable with command:
+Reload environmental variable with the command:
 ```
 . ~/.profile
 ```
@@ -367,10 +363,10 @@ admin@ip-xxx-xx-xx-xx:~$
 
 ### 4. Go-Ethereum
 ------
-> You could install `core-geth` instead, but make sure to install verion `v.1.11.5`
+> You could install `core-geth` instead, but make sure to install version `v.1.11.5`
 
 #### Step1. Installation
-We are going to install go-ethereum from git repository. Check <a hfef="https://geth.ethereum.org/docs/getting-started/installing-geth" target="_blank">here</a> to find out more options.
+We are going to install go-ethereum from the git repository. Check <a hfef="https://geth.ethereum.org/docs/getting-started/installing-geth" target="_blank">here</a> to find out more options.
 
 ```
 git clone https://github.com/ethereum/go-ethereum.git
@@ -381,7 +377,7 @@ cd go-ethereum
 ```
 make geth
 ```
-> Note: If Go build exits with “signal: killed”, please check your server memory. Minimum 1GB Memory required to install package successfully.
+> Note: If the Go build exits with “signal: killed”, please check your server memory. Minimum of 1GB Memory is required to install the package successfully.
 
 #### Step2. Update
 Change directory from home to go-ethereum:
@@ -396,20 +392,20 @@ make geth
 ```
 
 #### Step2. Create geth account
-1. Open profile file and add export path then `Ctrl+X` to Save & Close:
+1. Open the profile file and add the export path then `Ctrl+X` to Save & Close:
 ```
 nano ~/.profile
 ```
 ```
 export PATH=$HOME/go-ethereum/build/bin:$PATH
 ```
-2. Reload environmental variable with command:
+2. Reload environmental variable with the command:
 ```
 . ~/.profile
 ```
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/139562e2-0c78-4139-b160-7e0e488c4ac1" width="11%"></img> 
 
-3. Create geth account with following command:
+3. Create a geth account with the following command:
 ```
 geth account new
 ```
@@ -426,7 +422,7 @@ Address: {60a9e77d10e6b020c9afbdb9ba047913d3697dc2}
 
 > More geth commands list by typing `geth help`
 
-Once geth account created, the account is stored in following path by geth in file
+Once the geth account is created, the account is stored in the following path by geth in file
   - For Linux `~/.ethereum/keystore`
   - For Mac: `~/Library/Ethereum/keystore`
   - For Windows: `%APPDATA%Ethereum/keystore`
@@ -435,7 +431,7 @@ Once geth account created, the account is stored in following path by geth in fi
 
 4. Open Notepad and copy & paste your password and save the file as `password.txt`
 5. Create `~/.ethereum/password` folder and upload `password.txt` file `using MobaXterm SFTP`
-6. Download `geth account file` as a backup and place in a secure place
+6. Download the `geth account file` as a backup and place it in a secure place
 
 > Keystore Path: `/home/admin/.ethereum/keystore` <br/>
 Password file Path: `/home/admin/.ethereum/password/password.txt`
@@ -448,11 +444,11 @@ Password file Path: `/home/admin/.ethereum/password/password.txt`
 ### 5. Docker
 ------
 #### Installation
-Remove old version of `docker`, `docker.io`, and `docker-engine` that may already installed previously:
+Remove old versions of `docker`, `docker.io`, and `docker-engine` that may have already installed previously:
 ```
 sudo apt-get purge docker lxc-docker docker-engine docker.io
 ```
-Update defuault repository:
+Update default repository:
 ```
 sudo apt-get update
 ```
@@ -619,30 +615,30 @@ cp .env.example .env && cp config/config.example.json config/config.json
   - Replace `KEYSTORE_PASSWORD_FILE_PATH` with `"/home/<username>/.ethereum/password/"`.
   - Replace `POOL_TLS_CERT_PATH` after we complete <a href="#TLS-Configurations">TLS Configuration steps(Test/Production)</a> below.
 
-> use following commands: `cd ~/` then `sudo nano ocash-mining-pool/.env` to open `.env` file directly in Linux.
+> Use the following commands: `cd ~/` then `sudo nano ocash-mining-pool/.env` to open `.env` file directly in Linux.
 
 > Replace `<username>` with your user name logged in Linux.
 
-> Type `geth account list` to check wallet's pulbic address that we created from <a href="#step2-create-geth-account">this steps</a>.
+> Type `geth account list` to check the wallet's public address that we created from <a href="#step2-create-geth-account">this steps</a>.
 
-> ![important-shield] Note that you should append `0x` in the front of the `geth account address` to make it in Hexdecimal. Then, replace it with `POOL_ADDRESS` ex) `0x60a9e77d10e6b020c9afbdb9ba047913d3697dc2` 
+> ![important-shield] Note that you should append `0x` in the front of the `geth account address` to make it in Hexadecimal. Then, replace it with `POOL_ADDRESS` ex) `0x60a9e77d10e6b020c9afbdb9ba047913d3697dc2` 
 
 > By default, Keystore file stored in `~/.ethereum/keystore` in Linux. 
 
 <!-- > If you updated the path, you need to specify the exact path and update on `docker-compose.yml` lineNo.67 as well.<br/> -->
 
-> Make sure to upload `password.txt` file that we previsouly created from <a href="#step2-create-geth-account">this steps</a> to `"/home/<username>/.ethereum/password"` directory. 
+> Make sure to upload the `password.txt` file that we previously created from <a href="#step2-create-geth-account">this steps</a> to `"/home/<username>/.ethereum/password"` directory. 
 
 <!-- > We need to specify it and update on `docker-compose.yml` lineNo.68 as well if you choose to keep the file in other directory. -->
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/6c015a06-e04a-42d3-a4e1-6ca09eb2e470" width="11%"></img> 
 
 * config.json
-  - Open `config.json` file located in `/home/<username>/ocash-mining-pool/config/` from `MobaXterm` (or in Linux)
+  - Open the `config.json` file located in `/home/<username>/ocash-mining-pool/config/` from `MobaXterm` (or in Linux)
   - On lineNo.72, Replace `<pool ocash address>` with `geth account address`.
   - On lineNo.76, Replace `<rewards ocash address>` with `geth account address`.
  
-> use following commands: `cd ~/` then `sudo nano ocash-mining-pool/config/config.json` to open `config.json` file directly in Linux.
+> use following commands: `cd ~/` then `sudo nano ocash-mining-pool/config/config.json` to open the `config.json` file directly in Linux.
 
 > Replace `<username>` with your user name logged in Linux. 
 
@@ -655,9 +651,9 @@ cp .env.example .env && cp config/config.example.json config/config.json
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c360431b-dc88-49a6-b306-f82f80f9ce48" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/10c22834-c796-4832-aa33-ec5419e40efa" width="11%"></img> 
 
-* Make sure Keystore file in the directory you filled in `.env`
-* Make sure Password file in the directory you filled in `.env`
-* Double check the permission gratned on `keystore` and `password` files.
+* Make sure the Keystore file in the directory you filled in `.env`
+* Make sure the Password file in the directory you filled in `.env`
+* Double-check the permission granted on the `keystore` and `password` files.
 
 ### Step3. Run Docker Container
 ------
@@ -792,29 +788,29 @@ Verifying - Enter Export Password:
 admin@ip-xxx-xx-xx-xxx:~$ 
 </pre>
 
-> choose a password or leave `blank` for `no password` then press `Enter`
+> Choose a password or leave `blank` for `no password` then press `Enter`
 
 #### Step3. Update Configuration
 
-1. Open `.env` file and updated `POOL_TLS_CERT_PATH` to the location of `pool-cert.pfx` file; `/home/<username>`
+1. Open the `.env` file and update `POOL_TLS_CERT_PATH` to the location of the `pool-cert.pfx` file; `/home/<username>`
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/e0e0e865-d614-4d7d-a7f9-e6cfb9fd7db8" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/b79ff68e-ee35-4e71-b591-b959cfb80768" width="11%"></img> 
 
 > use following commands: `cd ~/` then `sudo nano ocash-mining-pool/.env` to open directly in Linux.
 
-2. Open `config/config.json` file
+2. Open the `config/config.json` file
    - Replace LinNo.92, `tls` from `false` to `true,`
-   - Replace LineNo.94, `tlsPfxPassword` from `"<fill in>"` to the password you setup above step. 
+   - Replace LineNo.94, `tlsPfxPassword` from `"<fill in>"` to the password you set up above step. 
 
 > use following commands: `cd ~/` then `sudo nano ocash-mining-pool/config/config.json` to open directly in Linux.
 
-> if you left password `blank` leave `tlsPfxPassword` as `""`(blank).
+> if you left the password `blank` leave `tlsPfxPassword` as `""`(blank).
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c980c52a-127d-4b78-bb2c-d36b00fc9d26" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/984d6a68-13b6-4c52-adb5-96ee95f1f86d" width="11%"></img>
 
-3. Save changes then follow rest of configuration steps <a href="#step2-update-envconfigjson">here</a> then following rest of the steps to run the mining pool
+3. Save changes then follow the rest of the configuration steps <a href="#step2-update-envconfigjson">here</a> then follow rest of the steps to run the mining pool
 
 > Mind that this setup is solely for `testing purposes` - you have to advise your clients to ignore certificate validation (e.g. `SSL_NOVERIFY=1` when using `ethminer`)
 
@@ -845,21 +841,21 @@ Before continuing, verify the record is deployed.
 Press Enter to Continue
 </pre>
 
-Follow instruction to add DNS TEXT Record to your domain prodivder, (<a href="https://domains.google.com/" target="_blank">Googld Domains</a> in our case)
+Follow instructions to add DNS TEXT Record to your domain provider, (<a href="https://domains.google.com/" target="_blank">Googld Domains</a> in our case)
   - Open `Googld Domains` -> Select your Domain -> Click `DNS` -> `Manage Custom Record`
   - Add new Custom DNS Record with given `Host Name` as `_acme-challenge.<YOUR_DOMAIN>` 
-  - Add `Data` as given string then `Save` 
-  - press `Enter` to continue on your server to pass the DNS challenge. 
+  - Add `Data` as the given string then `Save` 
+  - Press `Enter` to continue on your server to pass the DNS challenge. 
 
 > Note that we need to select `type` as `TXT`, and add `_amc-challenge` in the `Host Name` field. Google Domains will automatically append `.<YOUR_DOMAIN>` in the end. ex) `_acme-challenge.ocash.network`, and the `Data` will be wrapped with double quotation marks.
 
-> If the verification failed, you need to double check DNS Record, then repeat the process until you pass the challenge. Everytime re-run the command, it will generate new testing value so that you need to update DNS Record.  
+> If the verification failed, you need to double check DNS Record, then repeat the process until you pass the challenge. Every time re-run the command, it will generate a new testing value so you need to update DNS Record.  
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c2b3f086-c24a-4f47-be9b-4893250dbab1" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c278b688-f2a1-4db6-9d91-3544ad7acd1d" width="11%"></img>
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/d9c5fec2-8ed7-401c-acf8-578663d35eb9" width="11%"></img> 
 
-After pass the challenge, we now convert the key to PKCS12 format using:
+After passing the challenge, we now convert the key to PKCS12 format using:
 
 ```
 sudo openssl pkcs12 -export -out pool-cert.pfx -inkey /etc/letsencrypt/live/<your domain>/privkey.pem -in /etc/letsencrypt/live/<your domain>/fullchain.pem
@@ -877,26 +873,26 @@ the PKCS12 key is in file `pool-cert.pfx` located at `/home/<username>` ex) `/ho
 
 #### Step4. Update Configuration
 
-1. Open `.env` file and updated `POOL_TLS_CERT_PATH` to the location of `pool-cert.pfx` file; `/home/<username>`
+1. Open the `.env` file and update `POOL_TLS_CERT_PATH` to the location of the `pool-cert.pfx` file; `/home/<username>`
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/e0e0e865-d614-4d7d-a7f9-e6cfb9fd7db8" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/b79ff68e-ee35-4e71-b591-b959cfb80768" width="11%"></img> 
 
 > use following commands: `cd ~/` then `sudo nano ocash-mining-pool/.env` to open directly in Linux.
 
-2. Open `config/config.json` file
+2. Open the `config/config.json` file
    - Replace LinNo.92, `tls` from `false` to `true,`
-   - Replace LineNo.94, `tlsPfxPassword` from `"<fill in>"` to the password you setup above step. 
+   - Replace LineNo.94, `tlsPfxPassword` from `"<fill in>"` to the password you set up above step. 
 
 > use following commands: `cd ~/` then `sudo nano ocash-mining-pool/config/config.json` to open directly in Linux.
 
-> if you left password `blank` leave `tlsPfxPassword` as `""`(blank).
+> If you left the password `blank` leave `tlsPfxPassword` as `""`(blank).
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c980c52a-127d-4b78-bb2c-d36b00fc9d26" width="11%"></img>
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/984d6a68-13b6-4c52-adb5-96ee95f1f86d" width="11%"></img>
 
 
-3. Save changes then follow rest of configuration steps <a href="#step2-update-envconfigjson">here</a> then following rest of the steps to run the mining pool
+3. Save changes then follow the rest of the configuration steps <a href="#step2-update-envconfigjson">here</a> then follow rest of the steps to run the mining pool
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -906,7 +902,7 @@ Step1. Install `Ngnix` Web Server
 ```
 sudo apt install nginx
 ```
-Step2. Give a read/write `permission` to current user
+Step2. Give a read/write `permission` to the current user
 ```
 sudo chown -R USER /var/www/html/
 ```
@@ -914,9 +910,9 @@ Step3. Enable a website on Ngnix:
 ```
 sudo nano /etc/nginx/sites-available/default
 ```
-Step3. Download `index.html`file from the repo Repo(or any other static template file)
+Step3. Download the `index.html` file from the repo Repo(or any other static template file)
 
-Step4. Upload `index.html` file to `/var/www/html/`
+Step4. Upload the `index.html` file to `/var/www/html/`
 
 Step5. Reload Nginx:
 ```
@@ -935,24 +931,7 @@ ex)
 <!-- USAGE EXAMPLES -->
 ## Inconclusion
 
-We walked through how to set up oCash mining pool on AWS LightSail VPS. We haven't touched `Certbot Hooks` for TLS production configuration and `Web UI` for dynimic website yet, but at least, we leaned how to setup our own mining pool and tested that our mining pool is up and running. We will continue to develop our mining pool by setting up TLS configuration and install a dynamic webUI later. Stay Tuned!
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTACT -->
-<!-- ## Contact
-
-<div align="center">
-  <img src="images/10420-removebg.png" alt="Logo" width="200" height="200">
-  oFriends#10420 <a href="https://twitter.com/PineappleBingo_" targer="_blank">@PineappleBingo_</a>
-</div>
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
-
-<!-- ACKNOWLEDGMENTS -->
-<!-- ## Acknowledgments
-* []()
-* []()
-* []() -->
+We walked through how to set up oCash mining pool on AWS LightSail VPS. We haven't touched `Certbot Hooks` for TLS production configuration and `Web UI` for dynamic websites yet, but at least, we learned how to set up our own mining pool and verified that our mining pool is up and running. We will continue to develop our mining pool and tutorials by setting up TLS configurations and installing a dynamic webUI later. Please follow my Twitter <a href="https://twitter.com/PineappleBingo_" target="_blank">@PineappleBingo_</a>, and any further updates will be posted. Stay Tuned!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
