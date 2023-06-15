@@ -631,6 +631,8 @@ cp .env.example .env && cp config/config.example.json config/config.json
 
 > Make sure to upload the `password.txt` file that we previously created from <a href="#step2-create-geth-account">this steps</a> to `"/home/<username>/.ethereum/password"` directory. 
 
+> If you intend to do test run without TLS Configuration(Sikp TLS Configuration session below), leave `POOL_TLS_CERT_PATH` as it is then follow rest of steps and run the mining pool.
+
 <!-- > We need to specify it and update on `docker-compose.yml` lineNo.68 as well if you choose to keep the file in other directory. -->
 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/6c015a06-e04a-42d3-a4e1-6ca09eb2e470" width="11%"></img> 
