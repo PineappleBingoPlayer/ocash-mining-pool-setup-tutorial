@@ -7,15 +7,17 @@
 <!-- PROJECT LOGO -->
 <div align="center">
   <a href="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial">
-    <img src="images/10420-removebg.png" alt="Logo" width="200" height="200">
-<!--     <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/d8568d36-e34f-463c-b47c-91451119f9e8" width="25%"></img>  -->
+<!--     <img src="images/10420-removebg.png" alt="Logo" width="200" height="200"> -->
+    <br/>
+    <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/d8568d36-e34f-463c-b47c-91451119f9e8" width="25%"></img> 
   </a>
   <h5>oFriends#10420</h5>
   <h2 align="center">oCash Mining Pool Setup Tutorials</h2>
 
   <p align="center">
-    oCash is a crypto currency that empower oLand metaverse by <a href="https://twitter.com/overlinenetwork">@overlinenetwork</a>
+    oCash is a crypto currency that empowers oLand metaverse by <a href="https://twitter.com/overlinenetwork">@overlinenetwork</a>
     <br />
+    More info. can be found on <a href="https://bit.ly/43GE29k" target="_blank">Telegram</a> / <a href="https://bit.ly/45Vx56y" target="_blank">Reddit</a> / <a href="https://bit.ly/3C8Ss6z" target="_blank">Discord</a>
     <!--     <a href="https://github.com/pineapplebingoplayer/ocash-mining-pool-setup-tutorial"><strong>Explore the docs »</strong></a> -->
     <br />
     <br />
@@ -48,7 +50,7 @@
 ## Before We Start
 
 This tutorial is for setting up a `cloud-based oCash Mining Pool` over the AWS LightSail VPS instance.
-If you intend to set the mining pool VPS on your local device, please follow <a href="https://medium.com/@uanid/how-to-install-ocash-mining-pool-full-version-2a5ebf587d35" target="_blank">this</a> tutorial provided by @uanid
+If you intend to set the mining pool VPS on your local device, please follow <a href="https://medium.com/@uanid/how-to-install-ocash-mining-pool-full-version-2a5ebf587d35" target="_blank">this</a> tutorial provided by @uanid. Also check <a href="https://medium.com/@uanid/how-to-install-ocash-mining-pool-full-version-2a5ebf587d35" target="_blank">this</a> tutorial for installing the oCash mining pool on a cloud-based VPS in general.
 <br/>
 > This tutorial is derivative version of <a href="https://github.com/overliner/ocash-mining-pool" target="_blank">ōCash Mining Pool by @overlinenetwork </a>.
 > We will walk through the steps as simply as possible for those who are new to the mining world including myself. Please report any bugs or comments along with instructions. Your valued feedback will help #oland Community. 
