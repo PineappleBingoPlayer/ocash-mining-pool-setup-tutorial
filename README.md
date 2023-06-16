@@ -9,10 +9,10 @@
   <a href="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial">
 <!--     <img src="images/10420-removebg.png" alt="Logo" width="200" height="200"> -->
     <br/>
-    <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/d8568d36-e34f-463c-b47c-91451119f9e8" width="25%"></img> 
+    <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/d8568d36-e34f-463c-b47c-91451119f9e8" width="30%"></img> 
   </a>
   <h5>oFriends#10420</h5>
-  <h2 align="center">oCash Mining Pool Setup Tutorials</h2>
+  <h2 align="center">oCash Mining Pool Setup Tutorial</h2>
 
   <p align="center">
     oCash is a crypto currency that empowers oLand metaverse by <a href="https://twitter.com/overlinenetwork">@overlinenetwork</a>
@@ -44,7 +44,6 @@
 :white_square_button: TLS Config for Prod <br/>
 :white_square_button: Setup Certbot Hooks <br/>
 :white_check_mark: Host a Static Website <br/>
-:white_check_mark: Tutorials <br/>
 
 
 ## Before We Start
@@ -648,7 +647,7 @@ cp .env.example .env && cp config/config.example.json config/config.json
 
 > ![important-shield] Note that you should append `0x` in the front of the `get account address` to make it in Hexdecimal. Then, replace it with `<pool ocash address>` and `<rewards ocash address>` ex) `0x60a9e77d10e6b020c9afbdb9ba047913d3697dc2`
 
-> In this tutorial, we set the `pool ocash address` and `rewards ocash address` as the same. Feel free to separate wallets as you wish.
+> In this tutorial, we set the `pool ocash address` and `rewards ocash address` as the same.
 
 > `<pool ocash address>` is the only needed one for basic setup, must match `POOL_ADDRESS` in .env
 
@@ -811,6 +810,8 @@ admin@ip-xxx-xx-xx-xxx:~$
 
 > if you left the password `blank` leave `tlsPfxPassword` as `""`(blank).
 
+> If you intend to do test run without TLS Configuration, leave `tls` as `false` then skip the TLS Configuration setps and run the mining pool.
+
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/c980c52a-127d-4b78-bb2c-d36b00fc9d26" width="11%"></img> 
 <img src="https://github.com/PineappleBingoPlayer/ocash-mining-pool-setup-tutorial/assets/134893455/984d6a68-13b6-4c52-adb5-96ee95f1f86d" width="11%"></img>
 
@@ -822,6 +823,7 @@ admin@ip-xxx-xx-xx-xxx:~$
 
 ### Production Setup
 ------
+<!--
 #### Step1. Installation
 
 Install certbot:
@@ -897,6 +899,7 @@ the PKCS12 key is in file `pool-cert.pfx` located at `/home/<username>` ex) `/ho
 
 
 3. Save changes then follow the rest of the configuration steps <a href="#step2-update-envconfigjson">here</a> then follow rest of the steps to run the mining pool
+-->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
