@@ -935,7 +935,9 @@ ex)
 <!-- USAGE EXAMPLES -->
 ## Inconclusion
 
-We walked through how to set up oCash mining pool on AWS LightSail VPS. We haven't touched `Certbot Hooks` for TLS production configuration and `Web UI` for dynamic websites yet, but at least, we learned how to set up our own mining pool and verified that our mining pool is up and running. We will continue to develop our mining pool and tutorials by setting up TLS configurations and installing a dynamic webUI later. Please follow my Twitter <a href="https://twitter.com/PineappleBingo_" target="_blank">@PineappleBingo_</a>, and any further updates will be posted. Stay Tuned!
+We walked through how to set up oCash mining pool on AWS LightSail VPS. We haven't touched `Certbot Hooks` for TLS production configuration and `Web UI` for dynamic websites yet, but at least, we learned how to set up our own mining pool and verified that our mining pool is up and running. We will continue to develop our mining pool and tutorials by setting up TLS configurations and installing a dynamic webUI later. 
+
+Please follow my Twitter <a href="https://twitter.com/PineappleBingo_" target="_blank">@PineappleBingo_</a>, and any further updates will be posted. Stay Tuned !
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
