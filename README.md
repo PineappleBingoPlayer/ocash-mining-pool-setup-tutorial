@@ -102,7 +102,7 @@ If you intend to set the mining pool VPS on your local device, please follow <a 
     </li>
     <li><a href="#tls-configurations-">TLS Configurations</a>
         <ul>
-          <li><a href="testing-setup">Testing Setup</a></li>
+          <li><a href="#testing-setup">Testing Setup</a></li>
           <li><a href="#production-setup">Production Setup</a></li>
       </ul> 
     </li>
@@ -824,6 +824,9 @@ admin@ip-xxx-xx-xx-xxx:~$
 ### Production Setup
 ------
 <!--
+
+In this session, we are going to set up a free TLS certificate from `Let's Encrypt` to be able to secure our mining pool and email services using `Certbot` tool. Certbot is one of the recommended tools on the Linux system, and we are going to use `Certbot Hooks` to automate the certification renewal process since the TLS certificate from Let's Encrypt would expire every 90 days. In this way, we will no longer manually update TLS certificate and it would make our mining pool more secure and sustainable. 
+
 #### Step1. Installation
 
 Install certbot:
@@ -874,7 +877,39 @@ the PKCS12 key is in file `pool-cert.pfx` located at `/home/<username>` ex) `/ho
 
 #### Setp3. Setup Certbot Hooks
 
-> Currently we skip this part. Will update this section shortly...
+1. Check the timer for certbot is enabled by this command:
+
+```
+systemctl status certbot.timer
+```
+
+output:
+<pre>
+admin@ip-xxx-xx-x-xx:~$ systemctl status certbot.timer
+● certbot.timer - Run certbot twice daily
+   Loaded: loaded (/lib/systemd/system/certbot.timer; enabled; vendor preset: enabled)
+   Active: `active` (waiting) since Tue 2023-06-13 01:01:52 UTC; 1 weeks 1 days ago
+  Trigger: Thu 2023-06-22 03:16:57 UTC; 8h left
+
+Warning: Journal has been rotated since unit was started. Log output is incomplete or unavailable.
+admin@ip-172-26-0-92:~$ 
+</pre>
+
+> If the timer is not enabled, use the following command to make it enable:
+
+```
+sudo systemctl enable certbot.timer
+```
+
+2. 
+
+When Certbot detects that a certificate is due for renewal, `--pre-hook` and `--post-hook` hooks run before and after each attempt to renew it. If you want your hook to run only after a successful renewal, use `--deploy-hook` in a command like this.
+
+```
+certbot renew --deploy-hook /path/to/deploy-hook-script
+```
+
+
 
 
 #### Step4. Update Configuration
