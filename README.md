@@ -824,11 +824,11 @@ admin@ip-xxx-xx-xx-xxx:~$
 ### Production Setup
 ------
 <!--
-In this session, we are going to set up a free TLS certificate from `Let's Encrypt` to be able to secure our mining pool and email services using `Certbot` tool. Certbot is one of the recommended tools on the Linux system, and we are going to use `Certbot Hooks` to automate the certification renewal process since the TLS certificate from Let's Encrypt would expire every 90 days. In this way, we will no longer manually update TLS certificate and it would make our mining pool more secure and sustainable. 
+In this session, we are going to set up a free TLS certificate from `Let's Encrypt` to be able to secure our mining pool and email services using `Certbot` tool. Certbot is one of the recommended tools on the Linux system, and we are going to use `Certbot Hooks` to automate the certification renewal process since the TLS certificate from Let's Encrypt would expire every 90 days. In this way, we will no longer manually update the TLS certificate and it would make our mining pool more secure and sustainable. 
 
 #### Step1. Installation
 
-Install certbot:
+Install Certbot:
 ```
 sudo apt-get install certbot
 ```
@@ -840,7 +840,7 @@ sudo certbot certonly --manual --preferred-challenges dns --email <your email> -
 ```
 > Update `<your email>` / `<your domain>` to yours
 
-Server displays instruction for DNS challenge:
+The server displays instructions for the DNS challenge:
 <pre>
 Please deploy a DNS TXT record under the name
 _acme-challenge.<your domain> with the following value:
@@ -908,6 +908,11 @@ When Certbot detects that a certificate is due for renewal, `--pre-hook` and `--
 certbot renew --deploy-hook /path/to/deploy-hook-script
 ```
 
+
+Assign Write permission by:
+```
+sudo chmod 755 
+```
 
 
 
