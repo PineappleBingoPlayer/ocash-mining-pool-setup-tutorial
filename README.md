@@ -824,7 +824,6 @@ admin@ip-xxx-xx-xx-xxx:~$
 ### Production Setup
 ------
 <!--
-
 In this session, we are going to set up a free TLS certificate from `Let's Encrypt` to be able to secure our mining pool and email services using `Certbot` tool. Certbot is one of the recommended tools on the Linux system, and we are going to use `Certbot Hooks` to automate the certification renewal process since the TLS certificate from Let's Encrypt would expire every 90 days. In this way, we will no longer manually update TLS certificate and it would make our mining pool more secure and sustainable. 
 
 #### Step1. Installation
