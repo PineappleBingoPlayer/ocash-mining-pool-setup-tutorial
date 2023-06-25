@@ -49,7 +49,7 @@
 ## Before We Start
 
 This tutorial is for setting up a `cloud-based oCash Mining Pool` over the AWS LightSail VPS instance.
-If you intend to set the mining pool VPS on your local device, please follow <a href="https://medium.com/@uanid/how-to-install-ocash-mining-pool-full-version-2a5ebf587d35" target="_blank">this</a> tutorial provided by @uanid. Also check <a href="https://medium.com/@uanid/how-to-install-ocash-mining-pool-full-version-2a5ebf587d35" target="_blank">this</a> tutorial for installing the oCash mining pool on a cloud-based VPS in general.
+If you intend to set the mining pool VPS on your local device, please follow <a href="https://medium.com/@uanid/how-to-install-ocash-mining-pool-full-version-2a5ebf587d35" target="_blank">this</a> tutorial provided by @uanid. Also check <a href="https://medium.com/@uanid/ocash-mining-pool-installation-guide-vps-version-1cd4528671b7" target="_blank">this</a> tutorial for installing the oCash mining pool on a cloud-based VPS in general.
 <br/>
 > This tutorial is derivative version of <a href="https://github.com/overliner/ocash-mining-pool" target="_blank">ōCash Mining Pool by @overlinenetwork </a>.
 > We will walk through the steps as simply as possible for those who are new to the mining world including myself. Please report any bugs or comments along with instructions. Your valued feedback will help #oland Community. 
